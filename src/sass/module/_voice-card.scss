@@ -1,0 +1,129 @@
+@use "global" as *;
+
+.voice-card {
+  background: $white;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+  display: inline-block;
+  padding-top: rem(16);
+  padding-left: rem(16);
+  padding-right: rem(16);
+  padding-bottom: rem(24);
+  @include mq('md') {
+  padding: rem(24);
+  }
+}
+
+.voice-card__header {
+  display: flex;
+  gap: 4.1%;
+  align-items: end;
+  @include mq('md') {
+  gap: 3.3%;
+  }
+}
+
+.voice-card__header-left {
+  width: 47.6%;
+  @include mq('md') {
+  width: 58.5%;
+  }
+}
+
+.voice-card__info {
+  @include mq('md') {
+  display: flex;
+  align-items: end;
+  gap: 35.9565%;
+  }
+}
+
+.voice-card__meta {
+  font-size: rem(12);
+  font-weight: $regular;
+  font-family: $base-font-family;
+  line-height: 1.5;
+  color: $text-color;
+}
+
+.voice-card__label {
+  border: 1px solid $accent-color;
+  display: inline-block;
+  padding: rem(4) rem(14);
+  color: $accent-color;
+  font-size: rem(12);
+  font-weight: $regular;
+  line-height: 1.8333;
+  @include mq('md') {
+  padding: rem(6) rem(16);
+  }
+}
+
+.voice-card__title {
+  color: $text-color;
+  font-size: rem(16);
+  font-weight: $normal;
+  line-height: 1.5;
+  position: relative;
+  margin-top: rem(4);
+  @include mq('md') {
+  margin-top: rem(8);
+  font-size: rem(24);
+  }
+}
+
+.voice-card__title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  background-color: $accent-color;
+  bottom: 4;
+}
+
+.voice-card__header-right {
+  width: 48.3%;
+  @include mq('md') {
+  width: 38.2%;
+  }
+}
+
+.voice-card__img {
+  position: relative;
+}
+
+.voice-card__img::before {
+  content: "";
+  display: block;
+  padding-top: 77.48344%;
+}
+
+.voice-card__img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.voice-card__body {
+  margin-top: rem(15);
+  @include mq('md') {
+  margin-top: rem(40);
+  }
+}
+
+.voice-card__text {
+  font-size: rem(16);
+  color: $text-color;
+  font-family: $base-font-family;
+  font-weight: $regular;
+  line-height: 1.5;
+}
+
+
+
+
+

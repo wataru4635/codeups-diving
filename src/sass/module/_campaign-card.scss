@@ -1,0 +1,135 @@
+@use "global" as *;
+
+.campaign-card {
+  width: rem(333);
+  background-color: $white;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.campaign-card__img {
+  position: relative;
+}
+
+.campaign-card__img::before {
+  content: "";
+  display: block;
+  padding-top: 66.96696%;
+}
+
+.campaign-card__img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.campaign-card__inner {
+  padding-top: rem(16);
+  padding-left: rem(16);
+  padding-right: rem(16);
+  padding-bottom: rem(24);
+  @include mq('md') {
+  padding-top: rem(24);
+  padding-bottom: rem(40);
+  }
+}
+
+.campaign-card__head {
+  margin-top: rem(8);
+}
+
+.campaign-card__label {
+  border: 1px solid $accent-color;
+  display: inline-block;
+  padding: rem(4) rem(12);
+  color: $accent-color;
+  font-size: rem(12);
+  font-weight: $regular;
+  line-height: 1.8333;
+  @include mq('md') {
+  padding: rem(6) rem(16);
+}
+}
+
+.campaign-card__title {
+  margin-top: rem(4);
+  font-size: rem(16);
+  font-weight: $normal;
+  line-height: 1.5;
+  font-family: $base-font-family;
+  position: relative;
+  color: $text-color;
+}
+
+.campaign-card__title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  background-color: $accent-color;
+  top: rem(28);
+}
+
+.campaign__text {
+  margin-top: rem(12);
+  text-align: center;
+  font-size: rem(14);
+  font-family: $base-font-family;
+  font-weight: $regular;
+  color: $text-color;
+  line-height: 1.71429;
+  @include mq('md') {
+  font-size: rem(16);
+  }
+}
+
+.campaign__price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(16);
+  line-height: 1;
+  margin-top: rem(8);
+  @include mq('md') {
+  gap: rem(24);
+  }
+}
+
+.campaign__price-before {
+  font-size: rem(20);
+  font-family: $lato-font-family;
+  font-weight: $bold;
+  color: $text-color;
+  position: relative;
+  @include mq('md') {
+  font-size: rem(24);
+  }
+}
+
+.campaign__price-before::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  background-color: #C94800;;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.campaign__price-after {
+  font-size: rem(32);
+  color: $accent-color;
+  font-weight: $bold;
+  font-family: $lato-font-family;
+  @include mq('md') {
+  font-size: rem(40);
+  }
+}
+
+
