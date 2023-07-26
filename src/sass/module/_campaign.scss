@@ -1,4 +1,9 @@
 @use "global" as *;
+
+.campaign__inner {
+  max-width: rem(600);
+}
+
 .campaign__header {
   position: relative;
 }

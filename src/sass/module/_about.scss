@@ -1,0 +1,113 @@
+@use "global" as *;
+.about__inner {
+  position: relative;
+  max-width: rem(600);
+}
+
+.about__inner::before {
+  @include mq('md') {
+    content: "";
+    display: block;
+    background: url(../images/common/sango-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    width: rem(194);
+    height: rem(181);
+    bottom: -12%;
+    right: calc(50% - min(48.5vw, 40rem));
+    z-index: 1;
+  }
+}
+
+.about__container {
+  position: relative;
+}
+
+.about__images {
+  margin-top: rem(24);
+}
+
+.about__img-left {
+  position: relative;
+  width: 37.10144%;
+}
+
+.about__img-left img{
+  aspect-ratio: 128/194;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__img-right {
+  width: 81.44927%;
+  margin-top: -49%;
+  margin-left: auto;
+}
+
+.about__img-right img{
+  aspect-ratio: 281/186;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__body {
+  margin-top: rem(40);
+  @include mq('md') {
+    position: absolute;
+    top: 42%;
+    left: 57.5%;
+    transform: translate(-50%,-50%);
+    width: 77.7777%;
+    display: flex;
+    gap: 4.8%;
+  }
+}
+
+.about__title {
+  color: $accent-color;
+  font-family: $english-font-family;
+  font-size: rem(40);
+  font-weight: $regular;
+  line-height: 1;
+  @include mq('md') {
+  color: $white;
+  font-size: rem(80);
+  line-height: 1.25;
+  width: 47.6%;
+  }
+}
+
+.about__body-left {
+  @include mq('md') {
+  width: 47.6%;
+  }
+}
+
+.about__text {
+  color: $text-color;
+  font-family: $base-font-family;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 1.5;
+  margin-top: rem(16);
+  @include mq('md') {
+  margin-top: 0;
+  color: $white;
+  }
+}
+
+.about__button {
+  text-align: center;
+  margin-top: rem(40);
+}
+
+
+
+
+
+
+

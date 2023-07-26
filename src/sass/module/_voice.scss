@@ -1,0 +1,65 @@
+@use "global" as *;
+
+.voice__inner {
+  max-width: rem(600);
+  @include mq('md') {
+  position: relative;
+  }
+}
+
+.voice__inner::before {
+  @include mq('md') {
+    content: "";
+    display: block;
+    background: url(../images/common/voice-bg_1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    width: rem(301);
+    height: rem(138);
+    top: -18%;
+    left: calc(50% - min(48.5vw, 39rem));
+    z-index: 1;
+  }
+}
+.voice__inner::after {
+  @include mq('md') {
+    content: "";
+    display: block;
+    background: url(../images/common/voice-bg_2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    width: rem(71);
+    height: rem(162);
+    bottom: rem(-90);
+    right: rem(25);
+    z-index: 1;
+  }
+}
+
+.voice__items {
+  margin-top: rem(40);
+  @include mq('md') {
+  margin-top: rem(30);
+  display: flex;
+  gap: rem(40);
+  }
+}
+
+.voice__item + .voice__item {
+  margin-top: rem(40);
+  @include mq('md') {
+  margin-top: 0;
+}
+}
+
+.voice__button {
+  text-align: center;
+  margin-top: rem(40);
+  @include mq('md') {
+  margin-top: rem(80);
+  }
+}

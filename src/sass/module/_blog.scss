@@ -1,0 +1,73 @@
+@use "global" as *;
+
+.blog {
+  @include mq('md') {
+    position: relative;
+  }
+}
+
+
+
+.blog__inner {
+  max-width: rem(600);
+}
+
+.blog::before {
+  @include mq('md') {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url(../images/common/blog-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60.86847%;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.blog__inner {
+  @include mq('md') {
+    padding-top: rem(100);
+  }
+}
+
+.blog__engtitle,
+.blog__jptitle,
+.blog__engtitle span{
+  @include mq('md') {
+  color: $white;
+  }
+}
+
+.blog__items {
+  margin-top: rem(24);
+  @include mq('md') {
+  display: flex;
+  margin-top: rem(80);
+  gap: 3.8%;
+  }
+}
+
+.blog__item +.blog__item {
+  margin-top: rem(40);
+  @include mq('md') {
+  margin-top: 0;
+  }
+}
+
+.blog__item {
+  @include mq('md') {
+  width: 32.33%;
+  }
+}
+
+.blog__button {
+  text-align: center;
+  margin-top: rem(40);
+  @include mq('md') {
+  margin-top: rem(80);
+  }
+}
+

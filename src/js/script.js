@@ -51,7 +51,7 @@ var swiper = new Swiper(".js-mv-swiper", {
 
 var swiper = new Swiper(".js-campaign-swiper", {
 
-    slidesPerView: 1.2,
+    slidesPerView: 1.26,
   breakpoints: {
     // 768px以上の場合
     768: {
