@@ -27,8 +27,9 @@
   <!-- css -->
   <link rel="stylesheet" href="./assets/css/style.css" />
   <!-- JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script  src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script  src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script  src="./assets/js/jquery.inview.min.js"></script>
   <script defer src="./assets/js/script.js"></script>
 </head>
 <body>
@@ -445,9 +446,9 @@
       <h2 class="section-header__jptitle">ダイビング情報</h2>
     </div>
     <div class="information__media media-card">
-      <div class="media-card__img">
-        <img src="./assets/images/common/information.jpg" alt="">
-      </div>
+      <div class="media-card__img slide-animation">
+        <img src="./assets/images/common/information.jpg" alt="魚の画像">
+    </div>
       <div class="media-card__body">
         <h3 class="media-card__title">
           ライセンス講習
@@ -547,7 +548,7 @@
             <h3 class="voice-card__title">ここにタイトルが入ります。ここにタイトル</h3>
           </div>
           <div class="voice-card__header-right">
-            <figure class="voice-card__img">
+            <figure class="voice-card__img slide-animation">
               <img src="./assets/images/common/voice-woman.jpg" alt="女性の画像">
             </figure>
           </div>
@@ -568,7 +569,7 @@
             <h3 class="voice-card__title">ここにタイトルが入ります。ここにタイトル</h3>
           </div>
           <div class="voice-card__header-right">
-            <figure class="voice-card__img">
+            <figure class="voice-card__img slide-animation">
               <img src="./assets/images/common/voice-men.jpg" alt="男性の画像">
             </figure>
           </div>
@@ -595,10 +596,10 @@
       <h2 class="section-header__jptitle">料金一覧</h2>
     </div>
     <div class="price__container">
-      <div class="price__img-sp u-mobile">
+      <div class="price__img-sp u-mobile slide-animation">
         <img src="./assets/images/common/price-sp.jpg" alt="ウミガメの画像">
       </div>
-      <div class="price__img-pc u-desktop">
+      <div class="price__img-pc u-desktop slide-animation">
         <img src="./assets/images/common/price-pc.jpg" alt="">
       </div>
       <div class="price__lists">
@@ -673,7 +674,41 @@
     </div>
   </div>
 </section>
-  <!-- footer -->
+
+<!-- Contact -->
+<section class="contact top-contact">
+  <div class="contact__inner inner">
+    <div class="contact__container">
+      <div class="contact__container-left">
+        <div class="contact__logo">
+          <img src="./assets/images/common/contact-logo.png" alt="ロゴ画像">
+        </div>
+        <div class="contact__info">
+          <ul class="contact__info-lists">
+            <li class="contact__info-list">沖縄県那覇市1-1</li>
+            <li class="contact__info-list">TEL:0120-000-0000</li>
+            <li class="contact__info-list">営業時間:8:30-19:00</li>
+            <li class="contact__info-list">定休日:毎週火曜日</li>
+          </ul>
+          <div class="contact__info-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.4734888798594!2d127.67718017668672!3d26.21380048977406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e5699dc05bf813%3A0x3501764c0a57176d!2z44CSOTAwLTAwMTUg5rKW57iE55yM6YKj6KaH5biC5LmF6IyC5Zyw77yR5LiB55uu77yR4oiS77yR!5e0!3m2!1sja!2sjp!4v1690500071396!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="contact__container-right">
+        <div class="contact-header section-header">
+          <p class="contact-header__engtitle section-header__engtitle"><span>c</span>ontact</p>
+          <h2 class="section-header__jptitle">お問い合わせ</h2>
+          <p class="contact-header__text">ご予約・お問い合わせはコチラ</p>
+        </div>
+        <div class="contact__button">
+          <a href="#" class="section-button">Contact us<span></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- footer -->
 
   <footer class="footer top-footer">
     <div class="footer__inner inner">
@@ -774,72 +809,10 @@
       </div>
     </div>
   </footer>
-
-  <!-- 共通パーツ セクションタイトル -->
-<!-- <div class="section-header">
-  <p class="section-header__engtitle"><span>c</span>ampaign</p>
-  <h2 class="section-header__jptitle">キャンペーン</h2>
-</div> -->
-  <!-- 共通パーツ ボタン -->
-<!-- <a href="#" class="section-button">View more<span></span></a> -->
-<!-- 共通パーツ ブログカード -->
-  <!-- <a href="#" class="blog-card">
-    <div class="blog-card__header">
-      <figure class="blog-card__img">
-        <img src="./assets/images/common/blog-card_1.jpg" alt="サンゴ礁の画像">
-      </figure>
-    </div>
-    <div class="blog-card__body">
-      <time class="blog-card__time" datetime="2023-11-17">2023.11.17</time>
-      <h3 class="blog-card__title">
-        ライセンス取得
-      </h3>
-      <p class="blog-card__text">
-        ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-      </p>
-    </div>
-  </a> -->
-  <!-- 共通パーツ Voiceカード -->
-  <div class="voice-card">
-    <div class="voice-card__header">
-      <div class="voice-card__header-left">
-        <div class="voice-card__info">
-          <p class="voice-card__meta">20代(女性)</p>
-          <p class="voice-card__label">ライセンス講習</p>
-        </div>
-        <h3 class="voice-card__title">ここにタイトルが入ります。ここにタイトル</h3>
-      </div>
-      <div class="voice-card__header-right">
-        <figure class="voice-card__img">
-          <img src="./assets/images/common/voice-woman.jpg" alt="女性の画像">
-        </figure>
-      </div>
-    </div>
-    <div class="voice-card__body">
-      <p class="voice-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-        ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-        ここにテキストが入ります。ここにテキストが入ります。</p>
-    </div>
-  </div>
-
-  <!-- 共通パーツ Campaignカード -->
-  <div class="campaign-card">
-    <div class="campaign-card__img">
-      <img src="./assets/images/common/campaign-sp_1.jpg" alt="魚の画像">
-    </div>
-    <div class="campaign-card__inner">
-      <div class="campaign-card__head">
-        <p class="campaign-card__label">ライセンス講習</p>
-        <h3 class="campaign-card__title">ライセンス取得</h3>
-      </div>
-      <div class="campaign-card__body">
-        <p class="campaign__text">全部コミコミ(お一人様)</p>
-        <div class="campaign__price">
-          <p class="campaign__price-before">¥56,000</p>
-          <p class="campaign__price-after">¥46,000</p>
-        </div>
-      </div>
-    </div>
+  <div class="to-top">
+    <a href="#top">
+      <img src="./assets/images/common/to-top.png" alt="">
+    </a>
   </div>
 </body>
 </html>
