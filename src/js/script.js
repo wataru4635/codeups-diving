@@ -63,8 +63,8 @@ var swiper = new Swiper(".js-campaign-swiper", {
     },
     // 1281px以上の場合
     1281: {
-      slidesPerView: 3.5,
-      spaceBetween: "3.5%", // PCの場合のスライド間の余白を3%に設定
+      slidesPerView: 3.48,
+      spaceBetween: "3%", // PCの場合のスライド間の余白を3%に設定
     }},
   spaceBetween: "6.4%", // スライド間の余白
   speed: 3000, // 2秒かけてフェード

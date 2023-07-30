@@ -33,7 +33,7 @@
 }
 
 .price__container {
-  margin-top: rem(24);
+  margin-top: rem(28);
   @include mq('md') {
   margin-top: rem(40);
   display: flex;
@@ -64,7 +64,7 @@
 }
 
 .price__lists {
-  margin-top: rem(40);
+  margin-top: rem(42);
   @include mq('md') {
     width: 45.5555%;
     margin-top: 0;
@@ -95,7 +95,7 @@
 }
 
 .price__menu {
-  margin-top: rem(8);
+  margin-top: rem(9);
   display: flex;
   justify-content: space-between;
   font-size: rem(14);
@@ -117,7 +117,7 @@
 
 .price__button {
   text-align: center;
-  margin-top: rem(40);
+  margin-top: rem(42);
   @include mq('md') {
   margin-top: rem(80);
   }

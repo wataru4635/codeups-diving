@@ -16,7 +16,7 @@
     width: rem(194);
     height: rem(181);
     bottom: -12%;
-    right: calc(50% - min(48.5vw, 40rem));
+    right: calc(50% - min(48.5vw, rem(636)));
     z-index: 1;
   }
 }
@@ -26,7 +26,7 @@
 }
 
 .about__images {
-  margin-top: rem(24);
+  margin-top: rem(38);
 }
 
 .about__img-left {
@@ -55,7 +55,7 @@
 }
 
 .about__body {
-  margin-top: rem(40);
+  margin-top: rem(42);
   @include mq('md') {
     position: absolute;
     top: 42%;
@@ -63,7 +63,7 @@
     transform: translate(-50%,-50%);
     width: 77.7777%;
     display: flex;
-    gap: 4.8%;
+    gap: 4.7%;
   }
 }
 
@@ -102,7 +102,7 @@
 
 .about__button {
   text-align: center;
-  margin-top: rem(40);
+  margin-top: rem(41);
 }
 
 

@@ -6,10 +6,16 @@
   }
 }
 
-
-
 .blog__inner {
   max-width: rem(600);
+  @include mq('md') {
+    padding-top: rem(95);
+  }
+}
+
+.blog__inner.inner {
+  padding-left: rem(25);
+  padding-right: rem(25);
 }
 
 .blog::before {
@@ -27,11 +33,6 @@
   }
 }
 
-.blog__inner {
-  @include mq('md') {
-    padding-top: rem(100);
-  }
-}
 
 .blog__engtitle,
 .blog__jptitle,
@@ -42,7 +43,7 @@
 }
 
 .blog__items {
-  margin-top: rem(24);
+  margin-top: rem(28);
   @include mq('md') {
   display: flex;
   margin-top: rem(80);
@@ -65,7 +66,7 @@
 
 .blog__button {
   text-align: center;
-  margin-top: rem(40);
+  margin-top: rem(41);
   @include mq('md') {
   margin-top: rem(80);
   }

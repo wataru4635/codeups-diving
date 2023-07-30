@@ -25,7 +25,9 @@
   font-weight: $regular;
   color: $accent-color;
   line-height: 1.5;
+  margin-top: rem(4);
   @include mq('md') {
+    margin-top: rem(5);
   }
 }
 

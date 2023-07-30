@@ -18,19 +18,19 @@
   padding-right: rem(16);
   padding-bottom: rem(24);
   @include mq('md') {
-  padding-top: rem(24);
+  padding-top: rem(20);
   padding-bottom: rem(40);
   }
 }
 
-.campaign-card__head {
-  margin-top: rem(8);
-}
 
 .campaign-card__label {
   border: 1px solid $accent-color;
   display: inline-block;
-  padding: rem(4) rem(12);
+  padding-top: rem(4);
+  padding-bottom: rem(1);
+  padding-left: rem(12);
+  padding-right: rem(10);
   color: $accent-color;
   font-size: rem(12);
   font-weight: $regular;
@@ -41,7 +41,7 @@
 }
 
 .campaign-card__title {
-  margin-top: rem(4);
+  margin-top: rem(2);
   font-size: rem(16);
   font-weight: $normal;
   line-height: 1.5;
@@ -57,11 +57,17 @@
   height: 1px;
   position: absolute;
   background-color: $accent-color;
-  top: rem(28);
+  top: rem(32);
+}
+
+.campaign-card__body {
+  @include mq('md') {
+    margin-top: rem(22);
+  }
 }
 
 .campaign__text {
-  margin-top: rem(12);
+  margin-top: rem(16);
   text-align: center;
   font-size: rem(14);
   font-family: $base-font-family;
@@ -91,6 +97,7 @@
   font-weight: $bold;
   color: $text-color;
   position: relative;
+  top: rem(4);
   @include mq('md') {
   font-size: rem(24);
   }

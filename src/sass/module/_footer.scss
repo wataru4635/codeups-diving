@@ -31,7 +31,7 @@
 .footer__sns {
   display: flex;
   gap: rem(16);
-  margin-top: rem(16);
+  margin-top: rem(34);
 }
 
 .footer__facebook {
@@ -61,9 +61,9 @@
   font-weight: $regular;
   color: $white;
   white-space: nowrap;
-  margin-top: rem(28);
+  margin-top: rem(25);
   @include mq('md') {
-  margin-top: rem(80);
+  margin-top: rem(68);
   }
 }
 
@@ -82,4 +82,24 @@
   display: block;
   text-align: center;
   }
+}
+
+.nav__items .nav__item .nav__menu--margin-top.footer__nav-menu{
+  margin-top: rem(28);
+  @include mq('md') {
+  margin-top: rem(13);
+  }
+}
+
+.nav__list--right.footer__nav-list {
+  width: 46%;
+  margin-left: rem(12);
+  @include mq('md') {
+  margin-left: rem(44);
+  width: 51%;
+  }
+}
+
+.footer__nav-menu.nav__menu {
+  margin-top: rem(13);
 }

@@ -19,7 +19,7 @@
     width: rem(301);
     height: rem(138);
     top: -18%;
-    left: calc(50% - min(48.5vw, 39rem));
+    left: calc(50% - min(48.5vw, rem(621)));
     z-index: 1;
   }
 }
@@ -34,23 +34,23 @@
     position: absolute;
     width: rem(71);
     height: rem(162);
-    bottom: rem(-90);
+    bottom: rem(-71);
     right: rem(25);
     z-index: 1;
   }
 }
 
 .voice__items {
-  margin-top: rem(40);
+  margin-top: rem(43);
   @include mq('md') {
-  margin-top: rem(30);
+  margin-top: rem(27);
   display: flex;
   gap: rem(40);
   }
 }
 
 .voice__item + .voice__item {
-  margin-top: rem(40);
+  margin-top: rem(39);
   @include mq('md') {
   margin-top: 0;
 }
