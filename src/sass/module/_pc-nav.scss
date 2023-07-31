@@ -7,6 +7,14 @@
   justify-content: center;
 }
 
+.pc-nav__item {
+  transition: opacity .3s;
+}
+
+.pc-nav__item:hover {
+  opacity: 0.7;
+}
+
 .pc-nav__item,
 .pc-nav__item a {
   height: inherit;

@@ -23,29 +23,45 @@
 
 .footer__logo {
   width: rem(120);
+  transition: opacity .3s;
   @include mq('md') {
   width: rem(200);
   }
 }
 
+.footer__logo:hover {
+  opacity: 0.7;
+}
+
 .footer__sns {
+  margin-top: rem(16);
   display: flex;
   gap: rem(16);
-  margin-top: rem(34);
+  @include mq('md') {
+    margin-top: rem(34);
+  }
 }
+
 
 .footer__facebook {
   width: rem(24);
+  transition: opacity .3s;
   @include mq('md') {
-  width: rem(32);
+    width: rem(32);
   }
 }
 
 .footer__instagram {
   width: rem(24);
+  transition: opacity .3s;
   @include mq('md') {
-  width: rem(32);
+    width: rem(32);
   }
+}
+
+.footer__facebook:hover,
+.footer__instagram:hover {
+  opacity: 0.7;
 }
 
 .footer__nav-container {
@@ -77,10 +93,10 @@
 
 .footer__copyright small {
   font-size: rem(12);
+  text-align: center;
+  display: block;
   @include mq('md') {
   font-size: rem(14);
-  display: block;
-  text-align: center;
   }
 }
 
@@ -101,5 +117,8 @@
 }
 
 .footer__nav-menu.nav__menu {
-  margin-top: rem(13);
+  margin-top: rem(16);
+  @include mq('md') {
+    margin-top: rem(13);
+  }
 }

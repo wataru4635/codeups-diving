@@ -14,8 +14,12 @@
 }
 
 .blog__inner.inner {
-  padding-left: rem(25);
-  padding-right: rem(25);
+  padding-left: rem(21);
+  padding-right: rem(21);
+  @include mq('md') {
+    padding-left: rem(25);
+    padding-right: rem(25);
+  }
 }
 
 .blog::before {
@@ -45,22 +49,17 @@
 .blog__items {
   margin-top: rem(28);
   @include mq('md') {
-  display: flex;
+  display: grid;
   margin-top: rem(80);
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 3.8%;
   }
 }
 
 .blog__item +.blog__item {
-  margin-top: rem(40);
+  margin-top: rem(41);
   @include mq('md') {
   margin-top: 0;
-  }
-}
-
-.blog__item {
-  @include mq('md') {
-  width: 32.33%;
   }
 }
 

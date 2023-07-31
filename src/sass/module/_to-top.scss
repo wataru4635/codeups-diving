@@ -7,11 +7,16 @@
   overflow: hidden;
   right: rem(15);
   z-index: 10;
+  transition: transform .3s;
   @include mq('md') {
   width: rem(80);
   height: rem(80);
   right: rem(20);
   }
+}
+
+.to-top:hover {
+  transform: scale(1.07);
 }
 
 .to-top img{

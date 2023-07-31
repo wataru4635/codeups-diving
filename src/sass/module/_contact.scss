@@ -159,8 +159,11 @@
 }
 
 .contact-header__body {
-  margin-top: rem(-6);
-  margin-left: rem(20);
+  margin-top: rem(-9);
+  @include mq('md') {
+    margin-top: rem(-6);
+    margin-left: rem(20)
+  }
 }
 
 .contact-header__engtitle.section-header__engtitle {

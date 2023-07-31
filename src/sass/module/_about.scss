@@ -26,7 +26,10 @@
 }
 
 .about__images {
-  margin-top: rem(38);
+  margin-top: rem(28);
+  @include mq('md') {
+    margin-top: rem(38);
+  }
 }
 
 .about__img-left {

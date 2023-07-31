@@ -44,4 +44,10 @@
   width: rem(80);
   height: rem(80);
   position: static;
+  transition: transform .3s;
+}
+
+.campaign .swiper-button-next:hover,
+.campaign .swiper-button-prev:hover {
+  transform: scale(1.07);
 }

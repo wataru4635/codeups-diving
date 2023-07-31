@@ -13,7 +13,10 @@
 }
 
 .information__media {
-  margin-top: rem(35);
+  margin-top: rem(28);
+  @include mq('md') {
+    margin-top: rem(35);
+  }
 }
 
 
