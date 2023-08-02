@@ -10,6 +10,24 @@
   max-width: rem(600);
   @include mq('md') {
     padding-top: rem(95);
+    position: relative;
+  }
+}
+
+.blog__inner::before {
+  @include mq('md') {
+    content: "";
+    display: block;
+    background: url(../images/common/blog-bg_2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    width: rem(376.51);
+    height: rem(120.76);
+    top: rem(25);
+    left: calc(50% - min(48.5vw, rem(621)));
+    z-index: 1;
   }
 }
 
