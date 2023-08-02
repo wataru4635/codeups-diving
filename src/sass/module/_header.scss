@@ -3,7 +3,7 @@
 .header {
   height: rem(80);
   background: rgba(13, 41, 54, 0.68);
-  z-index: 1000;
+  z-index: 100;
   position: fixed;
   width: 100%;
   @include mq('md') {
@@ -38,6 +38,8 @@
   background: $accent-color;
   z-index: 2;
   display: none;
+	inset: 0;
+	overflow: auto;
 }
 
 .header__sp-nav.is-active {

@@ -39,18 +39,8 @@ $(document).on("click", ".js-hamburger:not(.is-active)", function () {
 });
 
 
-///// MV-swiper /////
 
-var swiper = new Swiper(".js-mv-swiper", {
-  loop: true,
-  effect: "fade", // 画像をフェードで切り替える
-  autoplay: {
-    delay: 5000, // 単位 : ms 1000ms = 1s
-  },
-  speed: 2000, // 2秒かけてフェード
-});
-
-// campaign-swiper //
+///// campaign-swiper /////
 
 var swiper = new Swiper(".js-campaign-swiper", {
 
@@ -163,6 +153,70 @@ box.each(function () {
             counter = 1;
         }
     });
+});
+
+
+///// MainViewのローディングアニメーション /////
+
+window.addEventListener("load", function () {
+  // .mv__loading-headerと.mv__headerの要素を取得
+  const loadingHeader = document.querySelector(".mv__loading-header");
+  const mainHeader = document.querySelector(".mv__header");
+  const header = document.querySelector(".header");
+
+  // loadingHeaderのGSAPアニメーション
+  gsap.fromTo(
+    loadingHeader,
+    { opacity: 1 },
+    {
+      opacity: 0,
+      duration: 2,
+      ease: "power1.out",
+      delay: 1 // 調整して1秒間表示させてからフェードアウトするように遅延させる
+    }
+  );
+
+  // mainHeaderのGSAPアニメーション
+  gsap.fromTo(
+    mainHeader,
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration: 2,
+      ease: "power1.out",
+      delay: 4 // 調整してloadingHeaderがフェードアウトした後に表示されるように遅延させる
+    }
+  );
+
+  gsap.fromTo(
+     header, // 複数の要素を同時にアニメーションさせるため、配列で指定します
+    { opacity: 0, y: -50 }, // y軸方向に-50px移動して非表示にします
+    {
+      opacity: 1,
+      y: 0, // y軸方向に0pxまで移動して表示します
+      duration: 2,
+      ease: "power1.out",
+      delay: 4.5 // 調整してloadingHeaderがフェードアウトした後に表示されるように遅延させる
+    }
+  );
+
+  // GSAPアニメーションが終わった後にSwiperを動かす
+  const gsapAnimationDuration = 1 * 1000; // GSAPアニメーションの時間（ミリ秒単位）
+  const swiperDelay = 5 * 1000; // Swiperの初回発火までの時間（ミリ秒単位）
+
+  ///// MV-swiper /////
+
+  setTimeout(function () {
+    // Swiperを初回発火
+    var swiper = new Swiper(".js-mv-swiper", {
+      loop: true,
+      effect: "fade", // 画像をフェードで切り替える
+      autoplay: {
+        delay: 5000, // 単位 : ms 1000ms = 1s
+      },
+      speed: 2000, // 2秒かけてフェード
+    });
+  }, gsapAnimationDuration + swiperDelay);
 });
 
 

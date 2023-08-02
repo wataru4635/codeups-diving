@@ -42,10 +42,14 @@
   z-index: -1;
 }
 .section-button:hover {
-  color: $accent-color;
+  @include mq('md') {
+    color: $accent-color;
+  }
 }
 .section-button:hover::after {
-  transform: scale(1, 1);
+  @include mq('md') {
+    transform: scale(1, 1);
+  }
 }
 
 .section-button span {
@@ -66,7 +70,9 @@
 }
 
 .section-button:hover span::after {
-  background-image: url(../images/common/button-arrow_blue.png);
+  @include mq('md') {
+    background-image: url(../images/common/button-arrow_blue.png);
+  }
 }
 
 

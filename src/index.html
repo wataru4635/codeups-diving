@@ -27,9 +27,11 @@
   <!-- css -->
   <link rel="stylesheet" href="./assets/css/style.css" >
   <!-- JavaScript -->
-  <script  src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script  src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script  src="./assets/js/jquery.inview.min.js"></script>
+  <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!-- 他のメタタグやCSSリンクなど -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script defer src="./assets/js/jquery.inview.min.js"></script>
   <script defer src="./assets/js/script.js"></script>
 </head>
 <body>
@@ -195,7 +197,11 @@
   <!-- main view -->
   <section class="mv top-mv">
     <div class="mv__inner">
-      <div class="mv__header">
+        <div class="mv__loading-header js-openingTitle" >
+          <h2 class="mv__loading-title">diving</h2>
+          <p class="mv__loading-subtitle">into the ocean</p>
+        </div>
+      <div class="mv__header js-mainTitle">
         <h2 class="mv__title">diving</h2>
         <p class="mv__subtitle">into the ocean</p>
       </div>
