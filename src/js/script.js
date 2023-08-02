@@ -1,5 +1,8 @@
 
 jQuery(function ($) {
+
+///// ハンバーガーメニュー /////
+
   $(".js-hamburger").click(function () {
     if ($(".js-hamburger").hasClass("is-active")) {
       // ハンバーガーメニューがアクティブ状態の場合、非アクティブにする
@@ -36,7 +39,7 @@ $(document).on("click", ".js-hamburger:not(.is-active)", function () {
 });
 
 
-// mv-swiper //
+///// MV-swiper /////
 
 var swiper = new Swiper(".js-mv-swiper", {
   loop: true,
@@ -83,7 +86,7 @@ var swiper = new Swiper(".js-campaign-swiper", {
   }
 });
 
-// トップへ戻るボタン//
+///// トップへ戻るボタン/////
 
 $(function () {
   const pageTop = $(".to-top");
@@ -134,7 +137,7 @@ $(function () {
   });
 });
 
-// 画像のスライドアニメーション //
+///// 画像のスライドアニメーション /////
 
 //要素の取得とスピードの設定
 var box = $('.slide-animation'),
