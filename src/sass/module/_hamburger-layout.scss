@@ -10,7 +10,7 @@
 .hamburger-layout span{
   position: absolute;
   width: inherit;
-  height: 1px;
+  height: rem(1);
   background-color: $white;
   transition: all .3s;
 }
