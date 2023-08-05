@@ -12,16 +12,13 @@
 }
 
 .campaign__cards {
-  margin-right: calc(50% - 50vw);
+  margin-right: calc(51% - 50vw);
   margin-top: rem(28);
   @include mq('md') {
   margin-top: rem(40);
   }
 }
 
-.campaign-swiper__wrapper {
-  padding-bottom: rem(10);
-}
 
 .campaign__button {
   margin-top: rem(30);
@@ -29,25 +26,4 @@
   @include mq('md') {
   margin-top: rem(70);
   }
-}
-
-.campaign-swiper__controller {
-  display: flex;
-  position: absolute;
-  bottom: rem(-12);
-  right: 0;
-  gap: rem(80);
-}
-
-.campaign .swiper-button-next,
-.campaign .swiper-button-prev {
-  width: rem(80);
-  height: rem(80);
-  position: static;
-  transition: transform .3s;
-}
-
-.campaign .swiper-button-next:hover,
-.campaign .swiper-button-prev:hover {
-  transform: scale(1.07);
 }

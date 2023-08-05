@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.media-card {
+.information-card {
   @include mq('md') {
     display: flex;
     gap: 4.5%;
@@ -8,19 +8,19 @@
   }
 }
 
-.media-card__img {
+.information-card__img {
   @include mq('md') {
   width: 50%;
   }
 }
 
-.media-card__img img {
+.information-card__img img {
   width: 100%;
   aspect-ratio: 345/227;
   object-fit: cover;
 }
 
-.media-card__body {
+.information-card__body {
   margin-top: rem(24);
   @include mq('md') {
   width: 45.5%;
@@ -28,7 +28,7 @@
   }
 }
 
-.media-card__title {
+.information-card__title {
   font-size: rem(20);
   font-family: $base-font-family;
   font-weight: $bold;
@@ -41,7 +41,7 @@
   }
 }
 
-.media-card__title::after {
+.information-card__title::after {
   content: "";
   display: block;
   width: 100%;
@@ -55,7 +55,7 @@
 }
 
 
-.media-card__text {
+.information-card__text {
   margin-top: rem(8);
   font-size: rem(16);
   font-weight: $regular;
@@ -64,10 +64,5 @@
   @include mq('md') {
   margin-top: rem(16);
   }
-}
-
-.media-card__button {
-  text-align: center;
-  margin-top: rem(43);
 }
 

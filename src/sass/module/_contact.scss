@@ -26,15 +26,6 @@
     }
 }
 
-.contact__inner.inner {
-  padding-left: rem(40);
-  padding-right: rem(40);
-  @include mq('md') {
-    padding-left: rem(22);
-    padding-right: rem(22);
-  }
-}
-
 .contact__container {
   @include mq('md') {
     display: flex;
@@ -151,14 +142,14 @@
   }
 }
 
-.contact-header {
+.contact__header {
   margin-top: rem(37);
   @include mq('md') {
   margin-top: rem(-10);
   }
 }
 
-.contact-header__body {
+.contact__header-body {
   margin-top: rem(-9);
   @include mq('md') {
     margin-top: rem(-6);
@@ -166,7 +157,7 @@
   }
 }
 
-.contact-header__engtitle.section-header__engtitle {
+.contact__header-engtitle.section-header__engtitle {
   font-size: rem(80);
   line-height: 1;
   display: flex;
@@ -177,7 +168,7 @@
   }
 }
 
-.contact-header__text {
+.contact__header-text {
   font-size: rem(14);
   color: $accent-color;
   font-weight: $regular;

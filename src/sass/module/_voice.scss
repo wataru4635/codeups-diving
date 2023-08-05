@@ -44,17 +44,7 @@
   margin-top: rem(43);
   @include mq('md') {
   margin-top: rem(27);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: rem(40);
   }
-}
-
-.voice__item + .voice__item {
-  margin-top: rem(39);
-  @include mq('md') {
-  margin-top: 0;
-}
 }
 
 .voice__button {

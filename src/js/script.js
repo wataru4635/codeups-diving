@@ -160,7 +160,7 @@ box.each(function () {
 
 window.addEventListener("load", function () {
   // .mv__loading-headerと.mv__headerの要素を取得
-  const loadingHeader = document.querySelector(".mv__loading-header");
+  const loadingHeader = document.querySelector(".loading-mv__header");
   const mainHeader = document.querySelector(".mv__header");
   const header = document.querySelector(".header");
 
@@ -184,7 +184,7 @@ window.addEventListener("load", function () {
       opacity: 1,
       duration: 2,
       ease: "power1.out",
-      delay: 4 // 調整してloadingHeaderがフェードアウトした後に表示されるように遅延させる
+      delay: 6 // 調整してloadingHeaderがフェードアウトした後に表示されるように遅延させる
     }
   );
 
@@ -196,7 +196,7 @@ window.addEventListener("load", function () {
       y: 0, // y軸方向に0pxまで移動して表示します
       duration: 2,
       ease: "power1.out",
-      delay: 4.5 // 調整してloadingHeaderがフェードアウトした後に表示されるように遅延させる
+      delay: 7 // 調整してloadingHeaderがフェードアウトした後に表示されるように遅延させる
     }
   );
 
