@@ -60,10 +60,10 @@ var swiper = new Swiper(".js-campaign-swiper", {
       spaceBetween: "3%", // PCの場合のスライド間の余白を3%に設定
     }},
   spaceBetween: "6.4%", // スライド間の余白
-  speed: 3000, // 2秒かけてフェード
+  speed: 2000, //
   loop:true,
   autoplay:{
-    delay:3000,//単位 : ms 1000ms = 1s
+    delay:2000,//単位 : ms 1000ms = 1s
     disableOnInteraction:false,//ドラッグしても自動再生が止まらない
   },
   pagination: {
