@@ -54,6 +54,7 @@
   font-weight: $regular;
   line-height: 1.8333;
   @include mq('md') {
+  margin-left: auto;
   padding: rem(6) rem(16);
   }
 }
