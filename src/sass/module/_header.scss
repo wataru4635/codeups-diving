@@ -30,16 +30,21 @@
 
 .header__sp-nav {
   position: absolute;
-  top: 0;
+  top: rem(80);
   left: 0;
-  right: 0;
   width: 100%;
   height: 100vh;
   background: $accent-color;
   z-index: 2;
   display: none;
-	inset: 0;
 	overflow: auto;
+}
+
+.header__sp-container.nav__container {
+  padding-top: 0;
+  padding-bottom: rem(100);
+  padding-left: rem(15);
+  padding-right: rem(15);
 }
 
 .header__sp-nav.is-active {

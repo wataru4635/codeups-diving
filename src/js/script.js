@@ -3,19 +3,23 @@ jQuery(function ($) {
 
 ///// ハンバーガーメニュー /////
 
-  $(".js-hamburger").click(function () {
-    if ($(".js-hamburger").hasClass("is-active")) {
-      // ハンバーガーメニューがアクティブ状態の場合、非アクティブにする
-      $(".js-hamburger").removeClass("is-active");
-      $("body").removeClass("menu-open"); // スクロールを有効にするためにクラスを削除
-      $(".js-sp-nav").fadeOut(300); // .js-sp-nav要素をフェードアウトさせる
-    } else {
-      // ハンバーガーメニューが非アクティブ状態の場合、アクティブにする
-      $(".js-hamburger").addClass("is-active");
-      $("body").addClass("menu-open"); // スクロールを無効にするためにクラスを追加
-      $(".js-sp-nav").fadeIn(300); // .js-sp-nav要素をフェードインさせる
-    }
-  });
+$(".js-hamburger").click(function () {
+  if ($(".js-hamburger").hasClass("is-active")) {
+    // ハンバーガーメニューがアクティブ状態の場合、非アクティブにする
+    $(".js-hamburger").removeClass("is-active");
+    $("body").removeClass("menu-open"); // スクロールを有効にするためにクラスを削除
+    $(".js-sp-nav").fadeOut(300); // .js-sp-nav要素をフェードアウトさせる
+    // headerのbackground-colorを元の値に戻す（ここでは初期のbackground-colorを"rgba(13, 41, 54, 0.68)"と仮定しています）
+    $(".header").css("background-color", "rgba(13, 41, 54, 0.68)");
+  } else {
+    // ハンバーガーメニューが非アクティブ状態の場合、アクティブにする
+    $(".js-hamburger").addClass("is-active");
+    $("body").addClass("menu-open"); // スクロールを無効にするためにクラスを追加
+    $(".js-sp-nav").fadeIn(300); // .js-sp-nav要素をフェードインさせる
+    // headerのbackground-colorを$accent-colorに変更する
+    $(".header").css("background-color", "#408F95");
+  }
+});
 });
 
 // スクロール禁止のための関数を定義
@@ -218,5 +222,3 @@ window.addEventListener("load", function () {
     });
   }, gsapAnimationDuration + swiperDelay);
 });
-
-
