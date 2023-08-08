@@ -160,26 +160,38 @@ box.each(function () {
 });
 
 
-///// MainViewのローディングアニメーション /////
 
-window.addEventListener("load", function () {
-  // .mv__loading-headerと.mv__headerの要素を取得
-  const loadingHeader = document.querySelector(".loading-mv__header");
-  const mainHeader = document.querySelector(".mv__header");
-  const header = document.querySelector(".header");
+function hideAnimation() {
+  loadingAnimation.style.display = 'blok';
+}
+const loadingAnimation = document.querySelector('.loading-mv-swiper');
+const leftImage = document.querySelector('.loading-mv__img-left img');
+const rightImage = document.querySelector('.loading-mv__img-right img');
+const loadingHeader = document.querySelector(".loading-mv__header");
+const mainHeader = document.querySelector(".mv__header");
+const header = document.querySelector(".header");
+const gsapAnimationDuration = 1 * 1000; // GSAPアニメーションの時間（ミリ秒単位）
+const swiperDelay = 3000; // Swiperの初回発火までの時間（ミリ秒単位）
+const sessionKey = 'animationSession';
 
-  // loadingHeaderのGSAPアニメーション
+
+// 初回アクセス時にフラグをセッションストレージに設定
+if (!sessionStorage.getItem('animationPlayed')) {
   gsap.fromTo(
-    loadingHeader,
-    { opacity: 1 },
-    {
-      opacity: 0,
-      duration: 2,
-      ease: "power1.out",
-      delay: 1 // 調整して1秒間表示させてからフェードアウトするように遅延させる
-    }
+    rightImage,
+    { opacity: 0, y: '100%' },
+    { opacity: 1, y: '0%', duration: 3, delay: 3.2, ease: 'power2.out' }
   );
-
+  gsap.fromTo(
+    leftImage,
+    { opacity: 0, y: '100%' },
+    { opacity: 1, y: '0%', duration: 3, delay: 3, ease: 'power2.out' }
+  );
+  gsap.fromTo(
+    loadingAnimation,
+    { opacity: 0 }, // 初期値
+    { opacity: 1, duration: 2, delay: 6, ease: 'none', onComplete: hideAnimation }
+  );
   // mainHeaderのGSAPアニメーション
   gsap.fromTo(
     mainHeader,
@@ -191,8 +203,7 @@ window.addEventListener("load", function () {
       delay: 6 // 調整してloadingHeaderがフェードアウトした後に表示されるように遅延させる
     }
   );
-
-  gsap.fromTo(
+    gsap.fromTo(
      header, // 複数の要素を同時にアニメーションさせるため、配列で指定します
     { opacity: 0, y: -50 }, // y軸方向に-50px移動して非表示にします
     {
@@ -200,15 +211,28 @@ window.addEventListener("load", function () {
       y: 0, // y軸方向に0pxまで移動して表示します
       duration: 2,
       ease: "power1.out",
-      delay: 7 // 調整してloadingHeaderがフェードアウトした後に表示されるように遅延させる
+      delay: 5 // 調整してloadingHeaderがフェードアウトした後に表示されるように遅延させる
     }
   );
-
-  // GSAPアニメーションが終わった後にSwiperを動かす
-  const gsapAnimationDuration = 1 * 1000; // GSAPアニメーションの時間（ミリ秒単位）
-  const swiperDelay = 5 * 1000; // Swiperの初回発火までの時間（ミリ秒単位）
-
-  ///// MV-swiper /////
+    gsap.fromTo(
+    loadingHeader,
+    { opacity: 1 },
+    {
+      opacity: 0,
+      duration: 2,
+      ease: "power1.out",
+      delay: 1 // 調整して1秒間表示させてからフェードアウトするように遅延させる
+    }
+  );
+  
+  sessionStorage.setItem('animationPlayed', true);
+}else {
+  // 初回アクセス後は要素を非表示にする
+  const loadingHeaders = document.querySelectorAll('.loading-mv__header'); // 複数の要素が該当する場合に対応
+  loadingHeaders.forEach(loadingHeader => {
+    loadingHeader.style.display = "none";
+  });
+}
 
   setTimeout(function () {
     // Swiperを初回発火
@@ -216,9 +240,8 @@ window.addEventListener("load", function () {
       loop: true,
       effect: "fade", // 画像をフェードで切り替える
       autoplay: {
-        delay: 5000, // 単位 : ms 1000ms = 1s
+        delay: 3000, // 単位 : ms 1000ms = 1s
       },
       speed: 2000, // 2秒かけてフェード
     });
   }, gsapAnimationDuration + swiperDelay);
-});

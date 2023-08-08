@@ -57,38 +57,4 @@
   }
 }
 
-.loading-mv__img-left img,
-.loading-mv__img-right img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
-.loading-mv__img-left img {
-  opacity: 0;/* ここを追加 */
-  animation-duration: 3s;/* アニメーション時間 */
-  animation-delay : 3s;/* 変化開始の時間 */
-  animation-name: slideInFromBottom;/* アニメーション名 */
-  animation-iteration-count: 1;/* アニメーションの繰り返し（無限）*/
-  animation-fill-mode: forwards; /*これで値を保持*/
-}
-
-.loading-mv__img-right img {
-  opacity: 0;/* ここを追加 */
-  animation-duration: 3s;/* アニメーション時間 */
-  animation-delay : 3.2s;/* 変化開始の時間 */
-  animation-name: slideInFromBottom;/* アニメーション名 */
-  animation-iteration-count: 1;/* アニメーションの繰り返し（無限）*/
-  animation-fill-mode: forwards; /*これで値を保持*/
-}
-
-@keyframes slideInFromBottom {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
