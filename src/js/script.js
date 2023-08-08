@@ -1,6 +1,6 @@
 
 jQuery(function ($) {
-  
+
   function hideAnimation() {
     loadingAnimation.style.display = 'blok';
   }
@@ -13,8 +13,8 @@ jQuery(function ($) {
   const gsapAnimationDuration = 1 * 1000; // GSAPアニメーションの時間（ミリ秒単位）
   const swiperDelay = 3000; // Swiperの初回発火までの時間（ミリ秒単位）
   const sessionKey = 'animationSession';
-  
-  
+
+
   // 初回アクセス時にフラグをセッションストレージに設定
   if (!sessionStorage.getItem('animationPlayed')) {
     gsap.fromTo(
@@ -64,7 +64,7 @@ jQuery(function ($) {
         delay: 1 // 調整して1秒間表示させてからフェードアウトするように遅延させる
       }
     );
-    
+
     sessionStorage.setItem('animationPlayed', true);
   }else {
     // 初回アクセス後は要素を非表示にする
@@ -73,7 +73,7 @@ jQuery(function ($) {
       loadingHeader.style.display = "none";
     });
   }
-  
+
     setTimeout(function () {
       // Swiperを初回発火
       var swiper = new Swiper(".js-mv-swiper", {
@@ -85,9 +85,9 @@ jQuery(function ($) {
         speed: 2000, // 2秒かけてフェード
       });
     }, gsapAnimationDuration + swiperDelay);
-    
+
   ///// ハンバーガーメニュー /////
-  
+
 $(".js-hamburger").click(function () {
   if ($(".js-hamburger").hasClass("is-active")) {
     // ハンバーガーメニューがアクティブ状態の場合、非アクティブにする
