@@ -23,13 +23,6 @@
   padding-right: min((20 / 1440)*100vw,rem(20));
 }
 
-.pc-nav__item:first-child a {
-  padding-left: 0;
-}
-.pc-nav__item:last-child a {
-  padding-right: 0;
-}
-
 .pc-nav__title {
   text-align: center;
   color: $white;

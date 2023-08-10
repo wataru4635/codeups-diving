@@ -5,19 +5,25 @@
 }
 
 .campaign-swiper__controller {
-  display: flex;
   position: absolute;
-  bottom: rem(-12);
+  top: 0;
   right: 0;
-  gap: rem(80);
 }
 
-.campaign .swiper-button-next,
+.campaign .swiper-button-next ,
 .campaign .swiper-button-prev {
   width: rem(80);
   height: rem(80);
-  position: static;
   transition: transform .3s;
+  top: rem(30);
+}
+
+.campaign .swiper-button-next {
+  right: 0;
+}
+
+.campaign .swiper-button-prev {
+  left: rem(-240);
 }
 
 .campaign .swiper-button-next:hover,

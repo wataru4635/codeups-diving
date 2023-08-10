@@ -18,7 +18,8 @@
   justify-content: space-between;
   padding: 0 rem(15);
   @include mq('md') {
-  padding: 0 rem(40);
+   padding-left: rem(40);
+   padding-right: rem(20);
   }
 }
 

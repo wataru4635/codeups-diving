@@ -32,7 +32,10 @@
     justify-content: space-between;
     background-color: $white;
     box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
-    padding: rem(82) rem(50);
+    padding-top: rem(82);
+    padding-bottom: rem(82);
+    padding-left: rem(50);
+    padding-right: rem(40);
     align-items: center;
   }
 }
@@ -149,23 +152,9 @@
   }
 }
 
-.contact__header-body {
-  margin-top: rem(-9);
-  @include mq('md') {
-    margin-top: rem(-6);
-    margin-left: rem(20)
-  }
-}
-
 .contact__header-engtitle.section-header__engtitle {
   font-size: rem(80);
   line-height: 1;
-  display: flex;
-  justify-content: center;
-  @include mq('md') {
-  margin-left: rem(81);
-  justify-content: initial;
-  }
 }
 
 .contact__header-text {
@@ -180,9 +169,6 @@
 .contact__button {
   text-align: center;
   margin-top: rem(40);
-  @include mq('md') {
-  margin-left: rem(22);
-  }
 }
 
 

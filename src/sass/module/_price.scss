@@ -2,16 +2,18 @@
 
 .price {
   background-color: $background-blue;
+  padding-top: rem(80);
+  padding-bottom: rem(80);
+  @include mq('md') {
+    padding-top: rem(100);
+    padding-bottom: rem(100);
+  }
 }
 
 .price__inner {
   max-width: rem(600);
-  padding-top: rem(80);
-  padding-bottom: rem(80);
   @include mq('md') {
     position: relative;
-    padding-top: rem(100);
-    padding-bottom: rem(100);
   }
 }
 
@@ -26,7 +28,7 @@
     position: absolute;
     width: rem(437);
     height: rem(201);
-    bottom: rem(60);
+    bottom: rem(-40);
     left: calc(50% - min(48.5vw, 39rem));
     z-index: 1;
   }

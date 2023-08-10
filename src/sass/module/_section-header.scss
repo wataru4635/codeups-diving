@@ -15,7 +15,7 @@
   }
 }
 
-.section-header__engtitle span {
+.section-header__engtitle::first-letter {
   color: $accent-color;
   text-transform: uppercase;
 }
