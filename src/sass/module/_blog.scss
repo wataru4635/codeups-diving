@@ -3,7 +3,6 @@
 .blog {
   @include mq('md') {
     position: relative;
-    padding-top: rem(95);
   }
 }
 

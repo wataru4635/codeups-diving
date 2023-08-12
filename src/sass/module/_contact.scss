@@ -41,8 +41,12 @@
 }
 
 .contact__container-left {
+  padding-left: rem(25);
+  padding-right: rem(25);
   @include mq('md') {
     width: 45.37037%;
+    padding-left: rem(0);
+    padding-right: rem(0);
   }
 }
 
@@ -72,11 +76,14 @@
 .contact__logo::after {
   content: "";
   display: block;
-  width: 100%;
   height: 1px;
   position: absolute;
+  bottom: rem(-5);
+  width: 100%;
   background-color: $accent-color;
-  bottom: rem(-11);
+  @include mq('md') {
+    bottom: rem(-11);
+  }
 }
 
 .contact__logo img {
@@ -150,6 +157,10 @@
   @include mq('md') {
   margin-top: rem(-10);
   }
+}
+
+.contact__header-jptitle.section-header__jptitle {
+  margin-top: rem(-10);
 }
 
 .contact__header-engtitle.section-header__engtitle {

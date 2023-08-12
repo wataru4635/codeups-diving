@@ -4,15 +4,6 @@
   background-color: $accent-color;
 }
 
-.footer__inner {
-  padding-top: rem(48);
-  padding-bottom: rem(56);
-  @include mq('md') {
-  padding-top: rem(80);
-  padding-bottom: rem(80);
-  }
-}
-
 .footer__wrapper {
   @include mq('md') {
   display: flex;
