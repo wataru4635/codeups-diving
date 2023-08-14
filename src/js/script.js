@@ -1,6 +1,8 @@
 
 jQuery(function ($) {
 
+  //ローディングアニメーション//
+
   function hideAnimation() {
     loadingAnimation.style.display = 'blok';
   }
