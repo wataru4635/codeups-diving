@@ -1,5 +1,9 @@
 @use "global" as *;
 
+.campaign-swiper__inner {
+  position: relative;
+}
+
 .campaign-swiper__wrapper {
   padding-bottom: rem(10);
 }

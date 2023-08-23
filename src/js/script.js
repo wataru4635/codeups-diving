@@ -135,24 +135,16 @@ $(document).on("click", ".js-hamburger:not(.is-active)", function () {
 
 var swiper = new Swiper(".js-campaign-swiper", {
 
-    slidesPerView: 1.26,
+    slidesPerView: "auto",
+    spaceBetween: 24, // スライド間の余白
+    speed: 2000, //
+    loop:true,
   breakpoints: {
     // 768px以上の場合
     768: {
-      slidesPerView: 2,
+      spaceBetween: 40,
     },
-    // 980px以上の場合
-    980: {
-      slidesPerView: 2.7,
-    },
-    // 1281px以上の場合
-    1281: {
-      slidesPerView: 3.48,
-      spaceBetween: "3%", // PCの場合のスライド間の余白を3%に設定
-    }},
-  spaceBetween: "6.4%", // スライド間の余白
-  speed: 2000, //
-  loop:true,
+},
   autoplay:{
     delay:2000,//単位 : ms 1000ms = 1s
     disableOnInteraction:false,//ドラッグしても自動再生が止まらない

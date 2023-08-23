@@ -6,9 +6,6 @@
 
 .campaign__header {
   position: relative;
-  @include mq('md') {
-  margin-top: rem(-8);
-  }
 }
 
 .campaign__cards {
@@ -25,5 +22,6 @@
   text-align: center;
   @include mq('md') {
   margin-top: rem(70);
+  padding-bottom: rem(5);
   }
 }
