@@ -1,14 +1,47 @@
 @use "global" as *;
+.campaign {
+  overflow: hidden;
+}
 
 .campaign__inner {
   max-width: rem(600);
-}
-
-.campaign__header {
   position: relative;
 }
 
-.campaign__cards {
+.campaign__controller {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.campaign__prev ,
+.campaign__next {
+  width: rem(80);
+  height: rem(80);
+  transition: transform .3s;
+  top: rem(30);
+}
+
+.campaign__next {
+  right: 0;
+}
+
+.campaign__prev {
+  left: rem(-240);
+}
+
+.campaign__next:hover,
+.campaign__prev:hover {
+  transform: scale(1.07);
+}
+
+/* 元の矢印を消す、画像に変更 */
+.campaign__prev::after,
+.campaign__next::after {
+	 display: none;
+}
+
+.campaign__swiper {
   margin-right: calc(50% - 50vw);
   margin-top: rem(28);
   @include mq('md') {
@@ -16,6 +49,16 @@
   }
 }
 
+.campaign__cards {
+  padding-bottom: rem(10);
+}
+
+.campaign__card {
+  max-width: rem(280);
+  @include mq('md') {
+  max-width: rem(333);
+  }
+}
 
 .campaign__button {
   margin-top: rem(30);

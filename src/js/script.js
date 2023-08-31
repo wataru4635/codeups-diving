@@ -1,38 +1,41 @@
-
 jQuery(function ($) {
-
   //ローディングアニメーション//
 
   function hideAnimation() {
-    loadingAnimation.style.display = 'blok';
+    loadingAnimation.style.display = "block";
   }
-  const loadingAnimation = document.querySelector('.loading-mv-swiper');
-  const leftImage = document.querySelector('.loading-mv__img-left img');
-  const rightImage = document.querySelector('.loading-mv__img-right img');
+  const loadingAnimation = document.querySelector(".js-mv-swiper");
+  const leftImage = document.querySelector(".loading-mv__img-left img");
+  const rightImage = document.querySelector(".loading-mv__img-right img");
   const loadingHeader = document.querySelector(".loading-mv__header");
   const mainHeader = document.querySelector(".mv__header");
   const header = document.querySelector(".header");
   const gsapAnimationDuration = 1 * 1000; // GSAPアニメーションの時間（ミリ秒単位）
   const swiperDelay = 3000; // Swiperの初回発火までの時間（ミリ秒単位）
-  const sessionKey = 'animationSession';
-
+  const sessionKey = "animationSession";
 
   // 初回アクセス時にフラグをセッションストレージに設定
-  if (!sessionStorage.getItem('animationPlayed')) {
+  if (!sessionStorage.getItem("animationPlayed")) {
     gsap.fromTo(
       rightImage,
-      { opacity: 0, y: '100%' },
-      { opacity: 1, y: '0%', duration: 3, delay: 3.2, ease: 'power2.out' }
+      { opacity: 0, y: "100%" },
+      { opacity: 1, y: "0%", duration: 3, delay: 3.2, ease: "power2.out" }
     );
     gsap.fromTo(
       leftImage,
-      { opacity: 0, y: '100%' },
-      { opacity: 1, y: '0%', duration: 3, delay: 3, ease: 'power2.out' }
+      { opacity: 0, y: "100%" },
+      { opacity: 1, y: "0%", duration: 3, delay: 3, ease: "power2.out" }
     );
     gsap.fromTo(
       loadingAnimation,
       { opacity: 0 }, // 初期値
-      { opacity: 1, duration: 2, delay: 6, ease: 'none', onComplete: hideAnimation }
+      {
+        opacity: 1,
+        duration: 2,
+        delay: 6,
+        ease: "none",
+        onComplete: hideAnimation,
+      }
     );
     // mainHeaderのGSAPアニメーション
     gsap.fromTo(
@@ -42,71 +45,80 @@ jQuery(function ($) {
         opacity: 1,
         duration: 2,
         ease: "power1.out",
-        delay: 6 // 調整してloadingHeaderがフェードアウトした後に表示されるように遅延させる
+        delay: 6, // 調整してloadingHeaderがフェードアウトした後に表示されるように遅延させる
       }
     );
-      gsap.fromTo(
-       header, // 複数の要素を同時にアニメーションさせるため、配列で指定します
+    gsap.fromTo(
+      header, // 複数の要素を同時にアニメーションさせるため、配列で指定します
       { opacity: 0, y: -50 }, // y軸方向に-50px移動して非表示にします
       {
         opacity: 1,
         y: 0, // y軸方向に0pxまで移動して表示します
         duration: 2,
         ease: "power1.out",
-        delay: 5 // 調整してloadingHeaderがフェードアウトした後に表示されるように遅延させる
+        delay: 5, // 調整してloadingHeaderがフェードアウトした後に表示されるように遅延させる
       }
     );
-      gsap.fromTo(
+    gsap.fromTo(
       loadingHeader,
       { opacity: 1 },
       {
         opacity: 0,
         duration: 2,
         ease: "power1.out",
-        delay: 1 // 調整して1秒間表示させてからフェードアウトするように遅延させる
+        delay: 1, // 調整して1秒間表示させてからフェードアウトするように遅延させる
       }
     );
 
-    sessionStorage.setItem('animationPlayed', true);
-  }else {
+    if (!sessionStorage.getItem(sessionKey)) {
+      loadingHeader.style.display = "block"; // 初回アクセス時のみ表示
+
+      // 以下、アニメーションコードの記述
+
+      sessionStorage.setItem(sessionKey, true); // 初回アクセスフラグをセット
+    } else {
+      loadingHeader.style.display = "none"; // 初回アクセス後は非表示
+    }
+
+    sessionStorage.setItem("animationPlayed", true);
+  } else {
     // 初回アクセス後は要素を非表示にする
-    const loadingHeaders = document.querySelectorAll('.loading-mv__header'); // 複数の要素が該当する場合に対応
-    loadingHeaders.forEach(loadingHeader => {
+    const loadingHeaders = document.querySelectorAll(".loading-mv__header"); // 複数の要素が該当する場合に対応
+    loadingHeaders.forEach((loadingHeader) => {
       loadingHeader.style.display = "none";
     });
   }
 
-    setTimeout(function () {
-      // Swiperを初回発火
-      var swiper = new Swiper(".js-mv-swiper", {
-        loop: true,
-        effect: "fade", // 画像をフェードで切り替える
-        autoplay: {
-          delay: 3000, // 単位 : ms 1000ms = 1s
-        },
-        speed: 2000, // 2秒かけてフェード
-      });
-    }, gsapAnimationDuration + swiperDelay);
+  setTimeout(function () {
+    var swiper = new Swiper(".js-mv-swiper", {
+      loop: true,
+      effect: "fade", // 画像をフェードで切り替える
+      autoplay: {
+        delay: 3000, // 単位 : ms 1000ms = 1s
+      },
+      speed: 2000, // 2秒かけてフェード
+    });
+  }, gsapAnimationDuration + swiperDelay);
 
   ///// ハンバーガーメニュー /////
 
-$(".js-hamburger").click(function () {
-  if ($(".js-hamburger").hasClass("is-active")) {
-    // ハンバーガーメニューがアクティブ状態の場合、非アクティブにする
-    $(".js-hamburger").removeClass("is-active");
-    $("body").removeClass("menu-open"); // スクロールを有効にするためにクラスを削除
-    $(".js-sp-nav").fadeOut(300); // .js-sp-nav要素をフェードアウトさせる
-    // headerのbackground-colorを元の値に戻す（ここでは初期のbackground-colorを"rgba(13, 41, 54, 0.68)"と仮定しています）
-    $(".header").css("background-color", "rgba(13, 41, 54, 0.68)");
-  } else {
-    // ハンバーガーメニューが非アクティブ状態の場合、アクティブにする
-    $(".js-hamburger").addClass("is-active");
-    $("body").addClass("menu-open"); // スクロールを無効にするためにクラスを追加
-    $(".js-sp-nav").fadeIn(300); // .js-sp-nav要素をフェードインさせる
-    // headerのbackground-colorを$accent-colorに変更する
-    $(".header").css("background-color", "#408F95");
-  }
-});
+  $(".js-hamburger").click(function () {
+    if ($(".js-hamburger").hasClass("is-active")) {
+      // ハンバーガーメニューがアクティブ状態の場合、非アクティブにする
+      $(".js-hamburger").removeClass("is-active");
+      $("body").removeClass("menu-open"); // スクロールを有効にするためにクラスを削除
+      $(".js-sp-nav").fadeOut(300); // .js-sp-nav要素をフェードアウトさせる
+      // headerのbackground-colorを元の値に戻す（ここでは初期のbackground-colorを"rgba(13, 41, 54, 0.68)"と仮定しています）
+      $(".header").css("background-color", "rgba(13, 41, 54, 0.68)");
+    } else {
+      // ハンバーガーメニューが非アクティブ状態の場合、アクティブにする
+      $(".js-hamburger").addClass("is-active");
+      $("body").addClass("menu-open"); // スクロールを無効にするためにクラスを追加
+      $(".js-sp-nav").fadeIn(300); // .js-sp-nav要素をフェードインさせる
+      // headerのbackground-colorを$accent-colorに変更する
+      $(".header").css("background-color", "#408F95");
+    }
+  });
 });
 
 // スクロール禁止のための関数を定義
@@ -129,40 +141,37 @@ $(document).on("click", ".js-hamburger:not(.is-active)", function () {
   enableScroll();
 });
 
-
-
 ///// campaign-swiper /////
 
 var swiper = new Swiper(".js-campaign-swiper", {
-
-    slidesPerView: "auto",
-    spaceBetween: 24, // スライド間の余白
-    speed: 2000, //
-    loop:true,
+  slidesPerView: "auto",
+  spaceBetween: 24, // スライド間の余白
+  speed: 2000, //
+  loop: true,
   breakpoints: {
     // 768px以上の場合
     768: {
       spaceBetween: 40,
     },
-},
-  autoplay:{
-    delay:2000,//単位 : ms 1000ms = 1s
-    disableOnInteraction:false,//ドラッグしても自動再生が止まらない
+  },
+  autoplay: {
+    delay: 2000, //単位 : ms 1000ms = 1s
+    disableOnInteraction: false, //ドラッグしても自動再生が止まらない
   },
   pagination: {
     el: ".js-campaign-pagination",
     clickable: true,
   },
-  navigation:{
-    nextEl:'.campaign .swiper-button-next',
-    prevEl:'.campaign .swiper-button-prev',
-  }
+  navigation: {
+    nextEl: ".campaign .swiper-button-next",
+    prevEl: ".campaign .swiper-button-prev",
+  },
 });
 
 ///// トップへ戻るボタン/////
 
 $(function () {
-  const pageTop = $(".to-top");
+  const pageTop = $(".js-to-top");
   const footer = $(".footer");
   const footerHeight = footer.innerHeight();
   let distanceFromFooter;
@@ -174,30 +183,32 @@ $(function () {
     distanceFromFooter = windowWidth < 768 ? 16 : 20; // SP（幅が768px未満）なら16、それ以外（PC）なら20の余白を設定
   });
 
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-      pageTop.fadeIn();
-    } else {
-      pageTop.fadeOut();
-    }
+  $(window)
+    .scroll(function () {
+      if ($(this).scrollTop() > 100) {
+        pageTop.fadeIn();
+      } else {
+        pageTop.fadeOut();
+      }
 
-    const windowHeight = $(window).height();
-    const documentHeight = $(document).height();
-    const scrollPosition = $(this).scrollTop() + windowHeight;
-    const stopPosition = documentHeight - footerHeight - distanceFromFooter;
+      const windowHeight = $(window).height();
+      const documentHeight = $(document).height();
+      const scrollPosition = $(this).scrollTop() + windowHeight;
+      const stopPosition = documentHeight - footerHeight - distanceFromFooter;
 
-    if (scrollPosition >= stopPosition) {
-      pageTop.css({
-        position: "absolute",
-        bottom: footerHeight + distanceFromFooter,
-      });
-    } else {
-      pageTop.css({
-        position: "fixed",
-        bottom: distanceFromFooter,
-      });
-    }
-  }).trigger('resize'); // 初回読み込み時にもウィンドウ幅を判別して余白を設定するようにします
+      if (scrollPosition >= stopPosition) {
+        pageTop.css({
+          position: "absolute",
+          bottom: footerHeight + distanceFromFooter,
+        });
+      } else {
+        pageTop.css({
+          position: "fixed",
+          bottom: distanceFromFooter,
+        });
+      }
+    })
+    .trigger("resize"); // 初回読み込み時にもウィンドウ幅を判別して余白を設定するようにします
 
   pageTop.click(function () {
     $("body,html").animate(
@@ -213,27 +224,29 @@ $(function () {
 ///// 画像のスライドアニメーション /////
 
 //要素の取得とスピードの設定
-var box = $('.slide-animation'),
-    speed = 700;
+var box = $(".js-slide-animation"),
+  speed = 700;
 
 //.slide-animationの付いた全ての要素に対して下記の処理を行う
 box.each(function () {
-    $(this).append('<div class="color"></div>')
-    var color = $(this).find('.color'),
-        image = $(this).find('img');
-    var counter = 0;
+  $(this).append('<div class="js-slide-animation__color"></div>');
+  var color = $(this).find(".js-slide-animation__color"),
+    image = $(this).find("img");
+  var counter = 0;
 
-    image.css('opacity', '0');
-    color.css('width', '0%');
-    //inviewを使って背景色が画面に現れたら処理をする
-    color.on('inview', function () {
-        if (counter == 0) {
-            $(this).delay(200).animate({ 'width': '100%' }, speed, function () {
-                image.css('opacity', '1');
-                $(this).css({ 'left': '0', 'right': 'auto' });
-                $(this).animate({ 'width': '0%' }, speed);
-            })
-            counter = 1;
-        }
-    });
+  image.css("opacity", "0");
+  color.css("width", "0%");
+  //inviewを使って背景色が画面に現れたら処理をする
+  color.on("inview", function () {
+    if (counter == 0) {
+      $(this)
+        .delay(200)
+        .animate({ width: "100%" }, speed, function () {
+          image.css("opacity", "1");
+          $(this).css({ left: "0", right: "auto" });
+          $(this).animate({ width: "0%" }, speed);
+        });
+      counter = 1;
+    }
+  });
 });

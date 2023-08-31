@@ -3,6 +3,7 @@
 .blog {
   @include mq('md') {
     position: relative;
+    padding-top: rem(95);
   }
 }
 
@@ -46,14 +47,6 @@
   }
 }
 
-
-.blog__engtitle,
-.blog__jptitle,
-.blog__engtitle::first-letter {
-  @include mq('md') {
-  color: $white;
-  }
-}
 
 .blog__items {
   margin-top: rem(28);

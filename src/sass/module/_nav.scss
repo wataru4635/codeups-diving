@@ -2,8 +2,13 @@
 
 .nav__container {
   display: flex;
-  padding: rem(80) rem(15);
   justify-content: center;
+}
+
+.nav__items {
+  @include mq('md') {
+    width: 100%;
+  }
 }
 
 
@@ -33,6 +38,12 @@
   position: relative;
 }
 
+.nav__menu--mt {
+  @include mq('md') {
+  margin-top: 0;
+  }
+}
+
 .nav__menu::before {
   background: url(../images/common/starfish.png);
   background-position: center;
@@ -56,20 +67,13 @@
   left: 0;
 }
 
-.nav__list--right {
+.nav__list {
   width: 50%;
-  margin-left: rem(0);
-}
-
-.nav__list--left {
-  width: 50%;
-}
-
-.nav__items .nav__item .nav__menu--margin-top {
-  margin-top: rem(12);
-@include mq('md') {
-margin-top: rem(16);
-}
+  @include mq('md') {
+    display: flex;
+    margin-left: 0;
+    gap: rem(40);
+  }
 }
 
 

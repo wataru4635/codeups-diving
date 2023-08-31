@@ -1,0 +1,22 @@
+@use "global" as *;
+
+.sns__facebook {
+  width: rem(24);
+  transition: opacity .3s;
+  @include mq('md') {
+    width: rem(32);
+  }
+}
+
+.sns__instagram {
+  width: rem(24);
+  transition: opacity .3s;
+  @include mq('md') {
+    width: rem(32);
+  }
+}
+
+.sns__facebook:hover,
+.sns__instagram:hover {
+  opacity: 0.7;
+}

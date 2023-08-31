@@ -159,16 +159,9 @@
   }
 }
 
-.contact__header-jptitle.section-header__jptitle {
-  margin-top: rem(-10);
-}
 
-.contact__header-engtitle.section-header__engtitle {
-  font-size: rem(80);
-  line-height: 1;
-}
-
-.contact__header-text {
+.contact__text {
+  text-align: center;
   font-size: rem(14);
   color: $accent-color;
   font-weight: $regular;

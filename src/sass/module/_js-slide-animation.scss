@@ -1,10 +1,10 @@
 @use "global" as *;
 
-.slide-animation {
+.js-slide-animation {
   position: relative;
 }
 
-.slide-animation .color {
+.js-slide-animation__color {
   position: absolute;
   top: 0;
   right: 0;
@@ -14,7 +14,7 @@
   background-color: $accent-color;
 }
 
-.slide-animation img {
+.js-slide-animation img {
   display: block;
   width: 100%;
 }

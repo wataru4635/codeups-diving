@@ -1,0 +1,11 @@
+@use 'global' as *;
+
+.top-header {
+  height: rem(80);
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  @include mq('md') {
+  height: rem(90);
+  }
+}

@@ -10,6 +10,7 @@
   color: $accent-color;
   text-align: center;
   z-index: 300;
+  display: none;
   @include mq('md') {
   top: 47%;
   }
