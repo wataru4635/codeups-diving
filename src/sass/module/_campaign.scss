@@ -55,6 +55,8 @@
 
 .campaign__card {
   max-width: rem(280);
+  display: flex;
+  height: auto;
   @include mq("md") {
     max-width: rem(333);
   }
