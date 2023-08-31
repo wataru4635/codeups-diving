@@ -1,7 +1,7 @@
 @use "global" as *;
 .about__inner {
   position: relative;
-  max-width: myrem(600);
+  max-width: rem(600);
 }
 
 .about__inner::before {
@@ -13,10 +13,10 @@
     background-position: center;
     background-size: contain;
     position: absolute;
-    width: myrem(194);
-    height: myrem(181);
+    width: rem(194);
+    height: rem(181);
     bottom: -12%;
-    right: calc(50% - min(48.5vw, myrem(636)));
+    right: calc(50% - min(48.5vw, rem(636)));
     z-index: 1;
   }
 }
@@ -26,9 +26,9 @@
 }
 
 .about__images {
-  margin-top: myrem(28);
+  margin-top: rem(28);
   @include mq("md") {
-    margin-top: myrem(38);
+    margin-top: rem(38);
   }
 }
 
@@ -58,7 +58,7 @@
 }
 
 .about__body {
-  margin-top: myrem(42);
+  margin-top: rem(42);
   @include mq("md") {
     position: absolute;
     top: 42%;
@@ -73,12 +73,12 @@
 .about__title {
   color: $accent-color;
   font-family: $english-font-family;
-  font-size: myrem(40);
+  font-size: rem(40);
   font-weight: $regular;
   line-height: 1;
   @include mq("md") {
     color: $white;
-    font-size: myrem(80);
+    font-size: rem(80);
     line-height: 1.25;
     width: 47.6%;
   }
@@ -93,10 +93,10 @@
 .about__text {
   color: $text-color;
   font-family: $base-font-family;
-  font-size: myrem(16);
+  font-size: rem(16);
   font-weight: $regular;
   line-height: 1.5;
-  margin-top: myrem(16);
+  margin-top: rem(16);
   @include mq("md") {
     margin-top: 0;
     color: $white;
@@ -105,5 +105,5 @@
 
 .about__button {
   text-align: center;
-  margin-top: myrem(41);
+  margin-top: rem(41);
 }

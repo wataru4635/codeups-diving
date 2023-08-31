@@ -19,8 +19,8 @@
 .pc-nav__item a {
   display: flex;
   align-items: center;
-  padding-left: min((20 / 1440) * 100vw, myrem(20));
-  padding-right: min((20 / 1440) * 100vw, myrem(20));
+  padding-left: min((20 / 1440) * 100vw, rem(20));
+  padding-right: min((20 / 1440) * 100vw, rem(20));
 }
 
 .pc-nav__title {
@@ -36,7 +36,7 @@
   content: "";
   /*絶対配置で線の位置を決める*/
   position: absolute;
-  bottom: myrem(-4);
+  bottom: rem(-4);
   left: 0;
   /*線の形状*/
   width: 100%;
@@ -54,14 +54,14 @@
 }
 
 .pc-nav__en-title {
-  font-size: myrem(18);
+  font-size: rem(18);
   line-height: 1;
   font-family: $english-font-family;
 }
 
 .pc-nav__jp-title {
-  font-size: myrem(10);
+  font-size: rem(10);
   line-height: 1.5;
   font-family: $base-font-family;
-  margin-top: myrem(4);
+  margin-top: rem(4);
 }

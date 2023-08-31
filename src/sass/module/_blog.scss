@@ -3,12 +3,12 @@
 .blog {
   @include mq("md") {
     position: relative;
-    padding-top: myrem(95);
+    padding-top: rem(95);
   }
 }
 
 .blog__inner {
-  max-width: myrem(600);
+  max-width: rem(600);
   @include mq("md") {
     position: relative;
   }
@@ -23,10 +23,10 @@
     background-position: center;
     background-size: contain;
     position: absolute;
-    width: myrem(376.51);
-    height: myrem(120.76);
-    top: myrem(-75);
-    left: calc(50% - min(48.5vw, myrem(621)));
+    width: rem(376.51);
+    height: rem(120.76);
+    top: rem(-75);
+    left: calc(50% - min(48.5vw, rem(621)));
     z-index: 1;
   }
 }
@@ -48,16 +48,16 @@
 }
 
 .blog__items {
-  margin-top: myrem(28);
+  margin-top: rem(28);
   @include mq("md") {
-    margin-top: myrem(80);
+    margin-top: rem(80);
   }
 }
 
 .blog__button {
   text-align: center;
-  margin-top: myrem(41);
+  margin-top: rem(41);
   @include mq("md") {
-    margin-top: myrem(80);
+    margin-top: rem(80);
   }
 }

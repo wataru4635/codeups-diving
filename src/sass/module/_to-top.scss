@@ -1,17 +1,17 @@
 @use "global" as *;
 
 .to-top {
-  width: myrem(48);
-  height: myrem(48);
+  width: rem(48);
+  height: rem(48);
   position: fixed;
   overflow: hidden;
-  right: myrem(15);
+  right: rem(15);
   z-index: 10;
   transition: transform 0.3s;
   @include mq("md") {
-    width: myrem(80);
-    height: myrem(80);
-    right: myrem(20);
+    width: rem(80);
+    height: rem(80);
+    right: rem(20);
   }
 }
 

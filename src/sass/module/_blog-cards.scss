@@ -9,7 +9,7 @@
 }
 
 .blog-cards__item + .blog-cards__item {
-  margin-top: myrem(27);
+  margin-top: rem(27);
   @include mq("md") {
     margin-top: 0;
   }

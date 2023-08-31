@@ -21,19 +21,19 @@
 }
 
 .nav__item a {
-  padding-top: myrem(12);
-  padding-bottom: myrem(12);
-  padding-left: myrem(22);
+  padding-top: rem(12);
+  padding-bottom: rem(12);
+  padding-left: rem(22);
 }
 
 .nav__menu {
   color: $white;
   font-weight: $bold;
-  font-size: myrem(16);
+  font-size: rem(16);
   line-height: 1.125;
   font-family: $base-font-family;
   display: block;
-  margin-top: myrem(16);
+  margin-top: rem(16);
   position: relative;
 }
 
@@ -49,16 +49,16 @@
   background-size: contain;
   content: "";
   position: absolute;
-  width: myrem(18);
-  height: myrem(18);
-  top: myrem(12);
+  width: rem(18);
+  height: rem(18);
+  top: rem(12);
   left: 0;
 }
 
 .nav__submenu {
   color: $white;
   font-weight: $regular;
-  font-size: myrem(16);
+  font-size: rem(16);
   line-height: 1.125;
   font-family: $base-font-family;
   display: block;
@@ -71,6 +71,6 @@
   @include mq("md") {
     display: flex;
     margin-left: 0;
-    gap: myrem(40);
+    gap: rem(40);
   }
 }

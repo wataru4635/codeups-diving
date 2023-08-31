@@ -21,7 +21,7 @@
 }
 
 .information-card__body {
-  margin-top: myrem(24);
+  margin-top: rem(24);
   @include mq("md") {
     width: 45.5%;
     margin-top: 0;
@@ -29,14 +29,14 @@
 }
 
 .information-card__title {
-  font-size: myrem(20);
+  font-size: rem(20);
   font-family: $base-font-family;
   font-weight: $bold;
   line-height: 1.2;
   position: relative;
   color: $text-color;
   @include mq("md") {
-    font-size: myrem(24);
+    font-size: rem(24);
     line-height: 1;
   }
 }
@@ -48,24 +48,24 @@
   height: 1px;
   position: absolute;
   background-color: $accent-color;
-  top: myrem(28);
+  top: rem(28);
   @include mq("md") {
-    top: myrem(32);
+    top: rem(32);
   }
 }
 
 .information-card__text {
-  margin-top: myrem(8);
-  font-size: myrem(16);
+  margin-top: rem(8);
+  font-size: rem(16);
   font-weight: $regular;
   line-height: 1.5;
   color: $text-color;
   @include mq("md") {
-    margin-top: myrem(16);
+    margin-top: rem(16);
   }
 }
 
 .information-card__button {
   text-align: center;
-  margin-top: myrem(43);
+  margin-top: rem(43);
 }

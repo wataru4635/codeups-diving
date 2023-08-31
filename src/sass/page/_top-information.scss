@@ -1,9 +1,9 @@
 @use "global" as *;
 
 .top-information {
-  margin-top: myrem(83);
+  margin-top: rem(83);
   background-color: $background-blue;
   @include mq("md") {
-    margin-top: myrem(140);
+    margin-top: rem(140);
   }
 }

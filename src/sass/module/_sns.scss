@@ -1,18 +1,18 @@
 @use "global" as *;
 
 .sns__facebook {
-  width: myrem(24);
+  width: rem(24);
   transition: opacity 0.3s;
   @include mq("md") {
-    width: myrem(32);
+    width: rem(32);
   }
 }
 
 .sns__instagram {
-  width: myrem(24);
+  width: rem(24);
   transition: opacity 0.3s;
   @include mq("md") {
-    width: myrem(32);
+    width: rem(32);
   }
 }
 

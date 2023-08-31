@@ -2,11 +2,11 @@
 
 .footer {
   background-color: $accent-color;
-  padding-top: myrem(48);
-  padding-bottom: myrem(56);
+  padding-top: rem(48);
+  padding-bottom: rem(56);
   @include mq("md") {
-    padding-top: myrem(80);
-    padding-bottom: myrem(80);
+    padding-top: rem(80);
+    padding-bottom: rem(80);
   }
 }
 
@@ -14,15 +14,15 @@
   @include mq("md") {
     display: flex;
     align-items: center;
-    gap: myrem(40);
+    gap: rem(40);
   }
 }
 
 .footer__logo {
-  width: myrem(120);
+  width: rem(120);
   transition: opacity 0.3s;
   @include mq("md") {
-    width: myrem(200);
+    width: rem(200);
   }
 }
 
@@ -31,11 +31,11 @@
 }
 
 .footer__sns {
-  margin-top: myrem(16);
+  margin-top: rem(16);
   display: flex;
-  gap: myrem(16);
+  gap: rem(16);
   @include mq("md") {
-    margin-top: myrem(34);
+    margin-top: rem(34);
   }
 }
 
@@ -44,24 +44,24 @@
   font-weight: $regular;
   color: $white;
   white-space: nowrap;
-  margin-top: myrem(25);
+  margin-top: rem(25);
   @include mq("md") {
-    margin-top: myrem(68);
+    margin-top: rem(68);
   }
 }
 
 .footer__nav {
-  margin-top: myrem(15);
+  margin-top: rem(15);
   @include mq("md") {
-    margin-top: myrem(15 0);
+    margin-top: rem(15);
   }
 }
 
 .footer__copyright small {
-  font-size: myrem(12);
+  font-size: rem(12);
   text-align: center;
   display: block;
   @include mq("md") {
-    font-size: myrem(14);
+    font-size: rem(14);
   }
 }

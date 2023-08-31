@@ -16,7 +16,7 @@
 }
 
 .loading-mv__title {
-  font-size: myrem(40);
+  font-size: rem(40);
   font-weight: $regular;
   font-family: $lato-font-family;
   text-transform: uppercase;
@@ -24,12 +24,12 @@
   letter-spacing: 0.54em;
   text-indent: 0.54em;
   @include mq("md") {
-    font-size: myrem(80);
+    font-size: rem(80);
   }
 }
 
 .loading-mv__subtitle {
-  font-size: myrem(20);
+  font-size: rem(20);
   font-weight: $regular;
   font-family: $english-font-family;
 }

@@ -4,34 +4,34 @@
   display: inline-block;
   color: $white;
   line-height: 1.57;
-  font-size: myrem(14);
+  font-size: rem(14);
   font-family: $english-font-family;
   font-weight: $regular;
   background-color: $accent-color;
-  padding-top: myrem(16);
-  padding-bottom: myrem(16);
-  padding-left: myrem(40);
-  padding-right: myrem(88);
+  padding-top: rem(16);
+  padding-bottom: rem(16);
+  padding-left: rem(40);
+  padding-right: rem(88);
   position: relative;
-  left: myrem(-3);
+  left: rem(-3);
   z-index: 1;
 }
 
 .section-button::before {
   content: "";
   position: absolute;
-  border: myrem(1) solid $accent-color;
-  width: myrem(202);
-  height: myrem(54);
-  top: myrem(4);
-  left: myrem(4);
+  border: rem(1) solid $accent-color;
+  width: rem(202);
+  height: rem(54);
+  top: rem(4);
+  left: rem(4);
   z-index: -1;
 }
 .section-button::after {
   background: $white;
   position: absolute;
   top: 0;
-  border: myrem(1) solid $accent-color;
+  border: rem(1) solid $accent-color;
   left: 0;
   content: "";
   width: 100%;
@@ -59,14 +59,14 @@
 .section-button span::after {
   content: "";
   position: absolute;
-  width: myrem(40);
+  width: rem(40);
   height: 100%;
   background-image: url(../images/common/button-arrow_white.png);
   background-repeat: no-repeat;
   background-size: contain;
-  top: myrem(7);
-  left: myrem(5);
-  margin-left: myrem(8);
+  top: rem(7);
+  left: rem(5);
+  margin-left: rem(8);
 }
 
 .section-button:hover span::after {

@@ -1,19 +1,19 @@
 @use "global" as *;
 
 .information {
-  padding: myrem(80) 0;
+  padding: rem(80) 0;
   @include mq("md") {
-    padding: myrem(99) 0;
+    padding: rem(99) 0;
   }
 }
 
 .information__inner {
-  max-width: myrem(600);
+  max-width: rem(600);
 }
 
 .information__media {
-  margin-top: myrem(28);
+  margin-top: rem(28);
   @include mq("md") {
-    margin-top: myrem(35);
+    margin-top: rem(35);
   }
 }

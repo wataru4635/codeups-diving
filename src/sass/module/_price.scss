@@ -2,16 +2,16 @@
 
 .price {
   background-color: $background-blue;
-  padding-top: myrem(80);
-  padding-bottom: myrem(80);
+  padding-top: rem(80);
+  padding-bottom: rem(80);
   @include mq("md") {
-    padding-top: myrem(100);
-    padding-bottom: myrem(100);
+    padding-top: rem(100);
+    padding-bottom: rem(100);
   }
 }
 
 .price__inner {
-  max-width: myrem(600);
+  max-width: rem(600);
   @include mq("md") {
     position: relative;
   }
@@ -26,18 +26,18 @@
     background-position: center;
     background-size: contain;
     position: absolute;
-    width: myrem(437);
-    height: myrem(201);
-    bottom: myrem(-40);
+    width: rem(437);
+    height: rem(201);
+    bottom: rem(-40);
     left: calc(50% - min(48.5vw, 39rem));
     z-index: 1;
   }
 }
 
 .price__container {
-  margin-top: myrem(28);
+  margin-top: rem(28);
   @include mq("md") {
-    margin-top: myrem(40);
+    margin-top: rem(40);
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -61,7 +61,7 @@
 }
 
 .price__lists {
-  margin-top: myrem(42);
+  margin-top: rem(42);
   @include mq("md") {
     width: 45.5555%;
     margin-top: 0;
@@ -69,11 +69,11 @@
 }
 
 .price__list + .price__list {
-  margin-top: myrem(40);
+  margin-top: rem(40);
 }
 
 .price__title {
-  font-size: myrem(16);
+  font-size: rem(16);
   font-family: $base-font-family;
   font-weight: $bold;
   line-height: 1.5;
@@ -87,41 +87,41 @@
   height: 1px;
   position: absolute;
   background-color: $accent-color;
-  bottom: myrem(-4);
+  bottom: rem(-4);
 }
 
 .price__menu {
-  margin-top: myrem(9);
+  margin-top: rem(9);
   display: grid;
   grid-template-columns: 80% 20%;
-  row-gap: myrem(10);
-  font-size: myrem(14);
+  row-gap: rem(10);
+  font-size: rem(14);
   font-family: $base-font-family;
   line-height: 1.71;
   font-weight: $regular;
   @include mq("md") {
-    font-size: myrem(16);
+    font-size: rem(16);
     line-height: 1.5;
-    row-gap: myrem(5);
+    row-gap: rem(5);
   }
 }
 
 .price__price {
-  font-size: myrem(14);
+  font-size: rem(14);
   font-weight: $regular;
   line-height: 1.714;
   font-family: $base-font-family;
-  margin-left: myrem(10);
+  margin-left: rem(10);
   text-align: right;
   @include mq("md") {
-    font-size: myrem(16);
+    font-size: rem(16);
   }
 }
 
 .price__button {
   text-align: center;
-  margin-top: myrem(42);
+  margin-top: rem(42);
   @include mq("md") {
-    margin-top: myrem(80);
+    margin-top: rem(80);
   }
 }

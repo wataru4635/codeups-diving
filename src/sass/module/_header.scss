@@ -9,17 +9,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 myrem(15);
+  padding: 0 rem(15);
   @include mq("md") {
-    padding-left: myrem(40);
-    padding-right: myrem(20);
+    padding-left: rem(40);
+    padding-right: rem(20);
   }
 }
 
 .header__drawer {
   position: relative;
-  width: myrem(32);
-  height: myrem(24);
+  width: rem(32);
+  height: rem(24);
   z-index: 100;
   @include mq("md") {
     display: none;
@@ -28,7 +28,7 @@
 
 .header__sp-nav {
   position: absolute;
-  top: myrem(79);
+  top: rem(79);
   left: 0;
   width: 100%;
   height: 100vh;
@@ -37,9 +37,9 @@
   display: none;
   overflow: auto;
   padding-top: 0;
-  padding-bottom: myrem(100);
-  padding-left: myrem(15);
-  padding-right: myrem(15);
+  padding-bottom: rem(100);
+  padding-left: rem(15);
+  padding-right: rem(15);
 }
 
 .header__sp-nav.is-active {
@@ -55,10 +55,10 @@
 }
 
 .header__logo {
-  width: myrem(102);
+  width: rem(102);
   z-index: 3;
   @include mq("md") {
-    width: myrem(133);
+    width: rem(133);
   }
 }
 
