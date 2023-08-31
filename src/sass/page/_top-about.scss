@@ -1,8 +1,8 @@
-@use 'global' as *;
+@use "global" as *;
 
 .top-about {
-  margin-top: rem(84);
-  @include mq('md') {
-  margin-top: rem(140);
+  margin-top: myrem(84);
+  @include mq("md") {
+    margin-top: myrem(140);
   }
 }

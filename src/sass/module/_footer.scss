@@ -2,27 +2,27 @@
 
 .footer {
   background-color: $accent-color;
-  padding-top: rem(48);
-  padding-bottom: rem(56);
-  @include mq('md') {
-    padding-top: rem(80);
-    padding-bottom: rem(80);
-    }
+  padding-top: myrem(48);
+  padding-bottom: myrem(56);
+  @include mq("md") {
+    padding-top: myrem(80);
+    padding-bottom: myrem(80);
+  }
 }
 
 .footer__wrapper {
-  @include mq('md') {
-  display: flex;
-  align-items: center;
-  gap: rem(40);
+  @include mq("md") {
+    display: flex;
+    align-items: center;
+    gap: myrem(40);
   }
 }
 
 .footer__logo {
-  width: rem(120);
-  transition: opacity .3s;
-  @include mq('md') {
-  width: rem(200);
+  width: myrem(120);
+  transition: opacity 0.3s;
+  @include mq("md") {
+    width: myrem(200);
   }
 }
 
@@ -31,11 +31,11 @@
 }
 
 .footer__sns {
-  margin-top: rem(16);
+  margin-top: myrem(16);
   display: flex;
-  gap: rem(16);
-  @include mq('md') {
-    margin-top: rem(34);
+  gap: myrem(16);
+  @include mq("md") {
+    margin-top: myrem(34);
   }
 }
 
@@ -44,26 +44,24 @@
   font-weight: $regular;
   color: $white;
   white-space: nowrap;
-  margin-top: rem(25);
-  @include mq('md') {
-  margin-top: rem(68);
+  margin-top: myrem(25);
+  @include mq("md") {
+    margin-top: myrem(68);
   }
 }
 
 .footer__nav {
-  margin-top: rem(15);
-  @include mq('md') {
-  margin-top: rem(15
-  .0000000000000);
+  margin-top: myrem(15);
+  @include mq("md") {
+    margin-top: myrem(15 0);
   }
 }
 
-
 .footer__copyright small {
-  font-size: rem(12);
+  font-size: myrem(12);
   text-align: center;
   display: block;
-  @include mq('md') {
-  font-size: rem(14);
+  @include mq("md") {
+    font-size: myrem(14);
   }
 }

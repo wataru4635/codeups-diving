@@ -1,14 +1,14 @@
 @use "global" as *;
 
 .voice__inner {
-  max-width: rem(600);
-  @include mq('md') {
-  position: relative;
+  max-width: myrem(600);
+  @include mq("md") {
+    position: relative;
   }
 }
 
 .voice__inner::before {
-  @include mq('md') {
+  @include mq("md") {
     content: "";
     display: block;
     background: url(../images/common/voice-bg_1.png);
@@ -16,15 +16,15 @@
     background-position: center;
     background-size: contain;
     position: absolute;
-    width: rem(301);
-    height: rem(138);
+    width: myrem(301);
+    height: myrem(138);
     top: -18%;
-    left: calc(50% - min(48.5vw, rem(621)));
+    left: calc(50% - min(48.5vw, myrem(621)));
     z-index: 1;
   }
 }
 .voice__inner::after {
-  @include mq('md') {
+  @include mq("md") {
     content: "";
     display: block;
     background: url(../images/common/voice-bg_2.png);
@@ -32,25 +32,25 @@
     background-position: center;
     background-size: contain;
     position: absolute;
-    width: rem(71);
-    height: rem(162);
-    bottom: rem(-71);
-    right: rem(25);
+    width: myrem(71);
+    height: myrem(162);
+    bottom: myrem(-71);
+    right: myrem(25);
     z-index: 1;
   }
 }
 
 .voice__items {
-  margin-top: rem(43);
-  @include mq('md') {
-  margin-top: rem(27);
+  margin-top: myrem(43);
+  @include mq("md") {
+    margin-top: myrem(27);
   }
 }
 
 .voice__button {
   text-align: center;
-  margin-top: rem(40);
-  @include mq('md') {
-  margin-top: rem(80);
+  margin-top: myrem(40);
+  @include mq("md") {
+    margin-top: myrem(80);
   }
 }

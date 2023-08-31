@@ -6,15 +6,14 @@
 }
 
 .nav__items {
-  @include mq('md') {
+  @include mq("md") {
     width: 100%;
   }
 }
 
-
 .nav__item {
   width: 100%;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
 }
 
 .nav__item:hover {
@@ -22,25 +21,25 @@
 }
 
 .nav__item a {
-  padding-top: rem(12);
-  padding-bottom: rem(12);
-  padding-left: rem(22);
+  padding-top: myrem(12);
+  padding-bottom: myrem(12);
+  padding-left: myrem(22);
 }
 
 .nav__menu {
   color: $white;
   font-weight: $bold;
-  font-size: rem(16);
+  font-size: myrem(16);
   line-height: 1.125;
   font-family: $base-font-family;
   display: block;
-  margin-top: rem(16);
+  margin-top: myrem(16);
   position: relative;
 }
 
 .nav__menu--margin-top {
-  @include mq('md') {
-  margin-top: 0;
+  @include mq("md") {
+    margin-top: 0;
   }
 }
 
@@ -50,16 +49,16 @@
   background-size: contain;
   content: "";
   position: absolute;
-  width: rem(18);
-  height: rem(18);
-  top: rem(12);
+  width: myrem(18);
+  height: myrem(18);
+  top: myrem(12);
   left: 0;
 }
 
 .nav__submenu {
   color: $white;
   font-weight: $regular;
-  font-size: rem(16);
+  font-size: myrem(16);
   line-height: 1.125;
   font-family: $base-font-family;
   display: block;
@@ -69,12 +68,9 @@
 
 .nav__list {
   width: 50%;
-  @include mq('md') {
+  @include mq("md") {
     display: flex;
     margin-left: 0;
-    gap: rem(40);
+    gap: myrem(40);
   }
 }
-
-
-

@@ -1,16 +1,16 @@
 @use "global" as *;
 
 .blog-cards {
-  @include mq('md') {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 3.8%;
+  @include mq("md") {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.8%;
   }
 }
 
-.blog-cards__item +.blog-cards__item {
-  margin-top: rem(27);
-  @include mq('md') {
-  margin-top: 0;
+.blog-cards__item + .blog-cards__item {
+  margin-top: myrem(27);
+  @include mq("md") {
+    margin-top: 0;
   }
 }

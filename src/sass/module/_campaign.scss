@@ -4,7 +4,7 @@
 }
 
 .campaign__inner {
-  max-width: rem(600);
+  max-width: myrem(600);
   position: relative;
 }
 
@@ -14,12 +14,12 @@
   right: 0;
 }
 
-.campaign__prev ,
+.campaign__prev,
 .campaign__next {
-  width: rem(80);
-  height: rem(80);
-  transition: transform .3s;
-  top: rem(30);
+  width: myrem(80);
+  height: myrem(80);
+  transition: transform 0.3s;
+  top: myrem(30);
 }
 
 .campaign__next {
@@ -27,7 +27,7 @@
 }
 
 .campaign__prev {
-  left: rem(-240);
+  left: myrem(-240);
 }
 
 .campaign__next:hover,
@@ -38,33 +38,33 @@
 /* 元の矢印を消す、画像に変更 */
 .campaign__prev::after,
 .campaign__next::after {
-	 display: none;
+  display: none;
 }
 
 .campaign__swiper {
   margin-right: calc(50% - 50vw);
-  margin-top: rem(28);
-  @include mq('md') {
-  margin-top: rem(40);
+  margin-top: myrem(28);
+  @include mq("md") {
+    margin-top: myrem(40);
   }
 }
 
 .campaign__cards {
-  padding-bottom: rem(10);
+  padding-bottom: myrem(10);
 }
 
 .campaign__card {
-  max-width: rem(280);
-  @include mq('md') {
-  max-width: rem(333);
+  max-width: myrem(280);
+  @include mq("md") {
+    max-width: myrem(333);
   }
 }
 
 .campaign__button {
-  margin-top: rem(30);
+  margin-top: myrem(30);
   text-align: center;
-  @include mq('md') {
-  margin-top: rem(70);
-  padding-bottom: rem(5);
+  @include mq("md") {
+    margin-top: myrem(70);
+    padding-bottom: myrem(5);
   }
 }

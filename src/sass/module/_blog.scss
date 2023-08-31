@@ -1,21 +1,21 @@
 @use "global" as *;
 
 .blog {
-  @include mq('md') {
+  @include mq("md") {
     position: relative;
-    padding-top: rem(95);
+    padding-top: myrem(95);
   }
 }
 
 .blog__inner {
-  max-width: rem(600);
-  @include mq('md') {
+  max-width: myrem(600);
+  @include mq("md") {
     position: relative;
   }
 }
 
 .blog__inner::before {
-  @include mq('md') {
+  @include mq("md") {
     content: "";
     display: block;
     background: url(../images/common/blog-bg_2.png);
@@ -23,16 +23,16 @@
     background-position: center;
     background-size: contain;
     position: absolute;
-    width: rem(376.51);
-    height: rem(120.76);
-    top: rem(-75);
-    left: calc(50% - min(48.5vw, rem(621)));
+    width: myrem(376.51);
+    height: myrem(120.76);
+    top: myrem(-75);
+    left: calc(50% - min(48.5vw, myrem(621)));
     z-index: 1;
   }
 }
 
 .blog::before {
-  @include mq('md') {
+  @include mq("md") {
     content: "";
     display: block;
     position: absolute;
@@ -47,20 +47,17 @@
   }
 }
 
-
 .blog__items {
-  margin-top: rem(28);
-  @include mq('md') {
-  margin-top: rem(80);
+  margin-top: myrem(28);
+  @include mq("md") {
+    margin-top: myrem(80);
   }
 }
-
 
 .blog__button {
   text-align: center;
-  margin-top: rem(41);
-  @include mq('md') {
-  margin-top: rem(80);
+  margin-top: myrem(41);
+  @include mq("md") {
+    margin-top: myrem(80);
   }
 }
-

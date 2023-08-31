@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .information-card {
-  @include mq('md') {
+  @include mq("md") {
     display: flex;
     gap: 4.5%;
     align-items: center;
@@ -9,8 +9,8 @@
 }
 
 .information-card__img {
-  @include mq('md') {
-  width: 50%;
+  @include mq("md") {
+    width: 50%;
   }
 }
 
@@ -21,23 +21,23 @@
 }
 
 .information-card__body {
-  margin-top: rem(24);
-  @include mq('md') {
-  width: 45.5%;
-  margin-top: 0;
+  margin-top: myrem(24);
+  @include mq("md") {
+    width: 45.5%;
+    margin-top: 0;
   }
 }
 
 .information-card__title {
-  font-size: rem(20);
+  font-size: myrem(20);
   font-family: $base-font-family;
   font-weight: $bold;
   line-height: 1.2;
   position: relative;
   color: $text-color;
-  @include mq('md') {
-  font-size: rem(24);
-  line-height: 1;
+  @include mq("md") {
+    font-size: myrem(24);
+    line-height: 1;
   }
 }
 
@@ -48,27 +48,24 @@
   height: 1px;
   position: absolute;
   background-color: $accent-color;
-  top: rem(28);
-  @include mq('md') {
-  top: rem(32);
+  top: myrem(28);
+  @include mq("md") {
+    top: myrem(32);
   }
 }
 
-
 .information-card__text {
-  margin-top: rem(8);
-  font-size: rem(16);
+  margin-top: myrem(8);
+  font-size: myrem(16);
   font-weight: $regular;
   line-height: 1.5;
   color: $text-color;
-  @include mq('md') {
-  margin-top: rem(16);
+  @include mq("md") {
+    margin-top: myrem(16);
   }
 }
 
 .information-card__button {
   text-align: center;
-  margin-top: rem(43);
+  margin-top: myrem(43);
 }
-
-
