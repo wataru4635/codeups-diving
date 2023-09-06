@@ -1,0 +1,32 @@
+@use "global" as *;
+
+
+.common-tab__lists {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: rem(16) rem(21);
+  @include mq('md') {
+  grid-template-columns: repeat(4, rem(163));
+  justify-content: left;
+  gap: rem(16) rem(32);
+  }
+
+}
+
+.common-tab__list {
+  text-align: center;
+  border: 1px solid var(--greenaccent, #408F95);
+  padding: rem(6) rem(22);
+  font-size: rem(14);
+  line-height: 1.57;
+  color: $accent-color;
+  @include mq('md') {
+    max-width: rem(162);
+  }
+}
+
+.common-tab__list.is-active {
+  color: $white;
+  background-color: $accent-color;
+}
+

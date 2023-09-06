@@ -143,3 +143,36 @@
     font-size: rem(40);
   }
 }
+
+.campaign-card__detail {
+  font-size: rem(16);
+  color: $text-color;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: rem(24);
+}
+
+.campaign-card__footer {
+  text-align: center;
+  margin-top: rem(32);
+}
+
+.campaign-card__date {
+  font-size: rem(16);
+  font-weight: 700;
+  color: $accent-color;
+  line-height: 1.12;
+  font-family: $lato-font-family;
+}
+
+.campaign-card__contact {
+  margin-top: rem(7);
+  font-size: rem(14);
+  color: $accent-color;
+  font-weight: 400;
+  line-height: 1.28;
+}
+
+.campaign-card__button {
+  margin-top: rem(16);
+}

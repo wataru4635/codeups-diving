@@ -23,6 +23,7 @@
     z-index: 1;
   }
 }
+
 .voice__inner::after {
   @include mq("md") {
     content: "";

@@ -1,0 +1,20 @@
+@use "global" as *;
+
+.breadcrumb__lists {
+  display: flex;
+}
+
+.breadcrumb__list {
+  display: flex;
+  align-items: center;
+  font-size: rem(14);
+  color: $text-color;
+  font-weight: 400;
+}
+
+
+.breadcrumb__list:not(:first-child)::before{
+  display: inline-block;
+  content: '＞';
+  margin: 0 rem(8);
+}
