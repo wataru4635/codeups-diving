@@ -37,18 +37,8 @@
 
 .sub-mv__img {
   height: inherit;
-  position: relative;
 }
 
-.sub-mv__img::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: rgba(64, 143, 149, 0.30);
-  width: 100%;
-  height: inherit;
-}
 
 .sub-mv__img img {
   filter: none;

@@ -1,0 +1,67 @@
+@use "global" as *;
+.page-information__inner {
+  position: relative;
+  max-width: rem(600);
+}
+
+.page-information__inner::before {
+    content: "";
+    display: block;
+    background: url(../images/common/voice-bg_1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    width: rem(120);
+    height: rem(55);
+    top: rem(-90);
+    @include mq('md') {
+      width: rem(301);
+      height: rem(138);
+      top: rem(-70);
+      left: calc(50% - min(48.5vw, rem(621)));
+    }
+}
+
+.page-information__tab {
+  margin-top: rem(120);
+  @include mq('md') {
+  margin-top: rem(150);
+  }
+}
+
+.page-information__tab-container {
+  margin-top: rem(16);
+  @include mq('md') {
+  margin-top: 0;
+  }
+}
+
+.page-information__card {
+  border: 1px solid $accent-color;
+  display: none;
+  padding: rem(23);
+  @include mq('md') {
+    width: 100%;
+    align-items: center;
+    background-color: #fff;
+    margin-top: rem(24);
+    border: 2px solid $accent-color;
+  }
+}
+
+.page-information__card.is-active{
+  display: flex;
+  animation: fadeIn .2s linear;
+}
+
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+    visibility: hidden;
+  }
+  100%{
+    opacity: 1;
+    visibility: visible;
+  }
+}

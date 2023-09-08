@@ -1,0 +1,121 @@
+@use "global" as *;
+
+.information-tab__lists {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: rem(19);
+  @include mq('md') {
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  gap: rem(90);
+  }
+
+}
+
+.information-tab__list {
+  text-align: center;
+  background: var(--green2, #DDF0F1);
+  padding: rem(8) rem(15);
+  font-weight: 400;
+  font-size: rem(14);
+  color: $accent-color;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  position: relative;
+  cursor: pointer;
+  @include mq('md') {
+    text-align: right;
+    font-size: rem(24);
+    max-width: rem(300);
+    padding: rem(27) rem(18);
+  }
+}
+
+
+.information-tab__list:nth-child(1):before {
+  @include mq('md') {
+  background: url(../images/common/information-tab_1.png);
+  background-position: center;
+  background-size: contain;
+  content: "";
+  position: absolute;
+  width: rem(64);
+  height: rem(64);
+  top: rem(12);
+  left: rem(30);
+ }
+}
+
+
+.information-tab__list.is-active:nth-child(1):before {
+  @include mq('md') {
+  background: url(../images/common/information-tab_1-active.png);
+  background-position: center;
+  background-size: contain;
+  content: "";
+  position: absolute;
+  width: rem(64);
+  height: rem(64);
+  top: rem(12);
+  left: rem(30);
+ }
+}
+
+.information-tab__list:nth-child(2):before {
+  @include mq('md') {
+  background: url(../images/common/information-tab_2.png);
+  background-position: center;
+  background-size: contain;
+  content: "";
+  position: absolute;
+  width: rem(64);
+  height: rem(64);
+  top: rem(12);
+  left: rem(18);
+ }
+}
+.information-tab__list.is-active:nth-child(2):before {
+  @include mq('md') {
+  background: url(../images/common/information-tab_2-active.png);
+  background-position: center;
+  background-size: contain;
+  content: "";
+  position: absolute;
+  width: rem(64);
+  height: rem(64);
+  top: rem(12);
+  left: rem(18);
+ }
+}
+
+.information-tab__list:nth-child(3):before {
+  @include mq('md') {
+  background: url(../images/common/information-tab_3.png);
+  background-position: center;
+  background-size: contain;
+  content: "";
+  position: absolute;
+  width: rem(64);
+  height: rem(64);
+  top: rem(13);
+  left: rem(30);
+ }
+}
+.information-tab__list.is-active:nth-child(3):before {
+  @include mq('md') {
+  background: url(../images/common/information-tab_3-active.png);
+  background-position: center;
+  background-size: contain;
+  content: "";
+  position: absolute;
+  width: rem(64);
+  height: rem(64);
+  top: rem(13);
+  left: rem(30);
+ }
+}
+
+.information-tab__list.is-active {
+  color: $white;
+  background-color: $accent-color;
+}

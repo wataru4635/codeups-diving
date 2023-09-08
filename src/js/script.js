@@ -1,18 +1,22 @@
 jQuery(function ($) {
-  //ローディングアニメーション//
+
+
+// ==========================================================================
+// ローディングアニメーション
+// ==========================================================================
 
   function hideAnimation() {
     loadingAnimation.style.display = "block";
   }
-  const loadingAnimation = document.querySelector(".js-mv-swiper");
-  const leftImage = document.querySelector(".loading-mv__img-left img");
-  const rightImage = document.querySelector(".loading-mv__img-right img");
-  const loadingHeader = document.querySelector(".loading-mv__header");
-  const mainHeader = document.querySelector(".mv__header");
-  const header = document.querySelector(".header");
-  const gsapAnimationDuration = 1 * 1000; // GSAPアニメーションの時間（ミリ秒単位）
-  const swiperDelay = 3000; // Swiperの初回発火までの時間（ミリ秒単位）
-  const sessionKey = "animationSession";
+  let loadingAnimation = document.querySelector(".js-mv-swiper");
+  let leftImage = document.querySelector(".loading-mv__img-left img");
+  let rightImage = document.querySelector(".loading-mv__img-right img");
+  let loadingHeader = document.querySelector(".loading-mv__header");
+  let mainHeader = document.querySelector(".mv__header");
+  let header = document.querySelector(".header");
+  let gsapAnimationDuration = 1 * 1000; // GSAPアニメーションの時間（ミリ秒単位）
+  let swiperDelay = 3000; // Swiperの初回発火までの時間（ミリ秒単位）
+  let sessionKey = "animationSession";
 
   // 初回アクセス時にフラグをセッションストレージに設定
   if (!sessionStorage.getItem("animationPlayed")) {
@@ -72,6 +76,7 @@ jQuery(function ($) {
 
     if (!sessionStorage.getItem(sessionKey)) {
       loadingHeader.style.display = "block"; // 初回アクセス時のみ表示
+      document.body.style.overflow = "hidden";
 
       // 以下、アニメーションコードの記述
 
@@ -83,14 +88,14 @@ jQuery(function ($) {
     sessionStorage.setItem("animationPlayed", true);
   } else {
     // 初回アクセス後は要素を非表示にする
-    const loadingHeaders = document.querySelectorAll(".loading-mv__header"); // 複数の要素が該当する場合に対応
+    let loadingHeaders = document.querySelectorAll(".loading-mv__header"); // 複数の要素が該当する場合に対応
     loadingHeaders.forEach((loadingHeader) => {
       loadingHeader.style.display = "none";
     });
   }
 
   setTimeout(function () {
-    var swiper = new Swiper(".js-mv-swiper", {
+    let swiper = new Swiper(".js-mv-swiper", {
       loop: true,
       effect: "fade", // 画像をフェードで切り替える
       autoplay: {
@@ -100,7 +105,13 @@ jQuery(function ($) {
     });
   }, gsapAnimationDuration + swiperDelay);
 
-  ///// ハンバーガーメニュー /////
+  setTimeout(function() {
+    document.body.style.overflow = "auto";
+  }, 6000); // 6秒
+
+// ==========================================================================
+//  ハンバーガメニュー
+// ==========================================================================
 
   $(".js-hamburger").click(function () {
     if ($(".js-hamburger").hasClass("is-active")) {
@@ -119,10 +130,9 @@ jQuery(function ($) {
       $(".header").css("background-color", "#408F95");
     }
   });
-});
-
-// スクロール禁止のための関数を定義
-function disableScroll() {
+  
+  // スクロール禁止のための関数を定義
+  function disableScroll() {
   $("html, body").css("overflow", "hidden");
 }
 
@@ -141,9 +151,11 @@ $(document).on("click", ".js-hamburger:not(.is-active)", function () {
   enableScroll();
 });
 
-///// campaign-swiper /////
+// ==========================================================================
+// campaign-swiper
+// ==========================================================================
 
-var swiper = new Swiper(".js-campaign-swiper", {
+let swiper = new Swiper(".js-campaign-swiper", {
   slidesPerView: "auto",
   spaceBetween: 24, // スライド間の余白
   speed: 2000, //
@@ -168,18 +180,21 @@ var swiper = new Swiper(".js-campaign-swiper", {
   },
 });
 
-///// トップへ戻るボタン/////
+
+// ==========================================================================
+// トップへ戻るボタン
+// ==========================================================================
 
 $(function () {
-  const pageTop = $(".js-to-top");
-  const footer = $(".footer");
-  const footerHeight = footer.innerHeight();
+  let pageTop = $(".js-to-top");
+  let footer = $(".footer");
+  let footerHeight = footer.innerHeight();
   let distanceFromFooter;
 
   pageTop.hide();
   $(window).resize(function () {
     // ウィンドウの幅に応じて余白を設定
-    const windowWidth = $(window).width();
+    let windowWidth = $(window).width();
     distanceFromFooter = windowWidth < 768 ? 16 : 20; // SP（幅が768px未満）なら16、それ以外（PC）なら20の余白を設定
   });
 
@@ -191,11 +206,11 @@ $(function () {
         pageTop.fadeOut();
       }
 
-      const windowHeight = $(window).height();
-      const documentHeight = $(document).height();
-      const scrollPosition = $(this).scrollTop() + windowHeight;
-      const stopPosition = documentHeight - footerHeight - distanceFromFooter;
-
+      let windowHeight = $(window).height();
+      let documentHeight = $(document).height();
+      let scrollPosition = $(this).scrollTop() + windowHeight;
+      let stopPosition = documentHeight - footerHeight - distanceFromFooter;
+      
       if (scrollPosition >= stopPosition) {
         pageTop.css({
           position: "absolute",
@@ -210,29 +225,32 @@ $(function () {
     })
     .trigger("resize"); // 初回読み込み時にもウィンドウ幅を判別して余白を設定するようにします
 
-  pageTop.click(function () {
-    $("body,html").animate(
+    pageTop.click(function () {
+      $("body,html").animate(
       {
         scrollTop: 0,
       },
       500
-    );
+      );
     return false;
   });
 });
 
-///// 画像のスライドアニメーション /////
+
+// ==========================================================================
+// 画像のスライドアニメーション
+// ==========================================================================
 
 //要素の取得とスピードの設定
-var box = $(".js-slide-animation"),
+let box = $(".js-slide-animation"),
   speed = 700;
-
-//.slide-animationの付いた全ての要素に対して下記の処理を行う
-box.each(function () {
-  $(this).append('<div class="js-slide-animation__color"></div>');
-  var color = $(this).find(".js-slide-animation__color"),
-    image = $(this).find("img");
-  var counter = 0;
+  
+  //.slide-animationの付いた全ての要素に対して下記の処理を行う
+  box.each(function () {
+    $(this).append('<div class="js-slide-animation__color"></div>');
+  let color = $(this).find(".js-slide-animation__color"),
+  image = $(this).find("img");
+  let counter = 0;
 
   image.css("opacity", "0");
   color.css("width", "0%");
@@ -250,3 +268,118 @@ box.each(function () {
     }
   });
 });
+
+  // ==========================================================================
+  // ギャラリー覧の拡大画像モーダル処理
+  // ==========================================================================
+  
+  // ギャラリー画像モーダル表示イベント
+  $(".js-modal img").click(function () {
+    // まず、クリックした画像の HTML(<img>タグ全体)を#frayDisplay内にコピー
+    $(".js-modal-event").html($(this).prop("outerHTML"));
+    //そして、fadeInで表示する。
+    $(".js-modal-event").fadeIn(200);
+    // モーダル表示時に背景スクロール禁止
+    $("body").css("overflow", "hidden");
+
+    return false;
+  });
+  
+  // ギャラリー画像モーダル非表示イベント
+  // モーダル画像背景 または 拡大画像そのものをクリックで発火
+  $(".js-modal-event").click(function () {
+    // 非表示にする
+    $(".js-modal-event").fadeOut(200);
+    // モーダル非表示時に背景スクロール許可
+    $("body").css("overflow", "auto");
+    
+    return false;
+  });
+});
+
+
+  // ==========================================================================
+  // インフォメーションのタブの切り替え
+  // ==========================================================================
+
+window.addEventListener('DOMContentLoaded', function() {
+  const tabList = document.querySelectorAll('.information-tab__list');
+  const tabContents = document.querySelectorAll('.js-tabContent');
+
+  // タブがクリックされた際の処理
+  tabList.forEach((element, i) => {
+    element.addEventListener('click', function() {
+      // タブのクリック状態を切り替える
+      if (!element.classList.contains('is-active')) {
+        toggleClass(element, 'is-active');
+      }
+
+      // クリックされたタブに対応するコンテンツを表示する
+      toggleClass(tabContents[i], 'is-active');
+      
+      // 他のタブとコンテンツを非表示にする（必要であれば）
+      for(let j = 0; j < tabContents.length; j++) {
+        if (j !== i) {
+          tabList[j].classList.remove('is-active');
+          tabContents[j].classList.remove('is-active');
+        }
+      }
+    });
+  });
+  function toggleClass(target, c) {
+    var targetSiblings = getSiblings(target);
+    targetSiblings.forEach(el => {
+      el.classList.remove(c)
+    });
+    target.classList.add(c);
+  }
+
+  // 同じ階層の要素を全て取得する関数
+  function getSiblings(e) {
+    let siblings = [];
+    if (!e.parentNode) {
+      return siblings;
+    }
+    let sibling = e.parentNode.firstChild;
+    while (sibling) {
+      if (sibling.nodeType === 1 && sibling !== e) {
+        siblings.push(sibling);
+      }
+      sibling = sibling.nextSibling;
+    }
+    return siblings;
+  };
+
+  
+
+  const footerTabList = document.querySelectorAll('.js-tab-list');
+  
+  footerTabList.forEach((element, i) => {
+    element.addEventListener('click', function() {
+      // フッタータブのクリック状態を切り替える
+      if (!element.classList.contains('is-active')) {
+        toggleClass(element, 'is-active');
+      }
+
+      let footerTab = document.querySelector(`[data-tab="${element.dataset.tab}"]`);
+      if (footerTab) {
+        toggleClass(footerTab, 'is-active');
+      }
+
+      // フッタータブがクリックされた際に、ページタブとページコンテンツを連動させる処理を追加
+      const targetTab = element.dataset.tab;
+      const matchingPageTab = document.querySelector(`.information-tab__list[data-tab="${targetTab}"]`);
+
+      if (matchingPageTab) {
+        toggleClass(matchingPageTab, 'is-active');
+
+        // 対応するコンテンツも表示する
+        const matchingPageContent = document.querySelector(`.js-tabContent[data-tab="${targetTab}"]`);
+        if (matchingPageContent) {
+          toggleClass(matchingPageContent, 'is-active');
+        }
+      }
+
+    })
+  })
+})

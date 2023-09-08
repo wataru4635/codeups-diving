@@ -1,0 +1,127 @@
+@use "global" as *;
+.page-about__inner {
+  position: relative;
+  max-width: rem(600);
+}
+
+.page-about__inner::before {
+    content: "";
+    display: block;
+    background: url(../images/common/voice-bg_1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    width: rem(120);
+    height: rem(55);
+    top: rem(-25);
+    @include mq('md') {
+      width: rem(301);
+      height: rem(138);
+      top: rem(-70);
+      left: calc(50% - min(48.5vw, rem(621)));
+    }
+}
+.page-about__inner::after {
+  @include mq("md") {
+    content: "";
+    display: block;
+    background: url(../images/common/contact-bg_sp.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    width: rem(301);
+    height: rem(138);
+    bottom: -12%;
+    right: calc(50% - min(48.5vw, rem(636)));
+    z-index: 1;
+  }
+}
+
+.page-about__container {
+  position: relative;
+}
+
+.page-about__images {
+  margin-top: rem(28);
+  @include mq("md") {
+    margin-top: rem(38);
+  }
+}
+
+.page-about__img-left {
+    position: relative;
+    width: 37.10144%;
+}
+
+.page-about__img-left img {
+  aspect-ratio: 128/194;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-about__img-right {
+  @include mq('md') {
+    width: 81.44927%;
+    margin-top: -49%;
+    margin-left: auto;
+  }
+}
+
+.page-about__img-right img {
+  aspect-ratio: 281/186;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-about__body {
+  margin-top: rem(42);
+  @include mq("md") {
+    position: absolute;
+    top: 42%;
+    left: 57.5%;
+    transform: translate(-50%, -50%);
+    width: 77.7777%;
+    display: flex;
+    gap: 4.7%;
+  }
+}
+
+.page-about__title {
+  color: $white;
+  font-family: $english-font-family;
+  font-size: rem(40);
+  font-weight: $regular;
+  line-height: 1;
+  position: absolute;
+  top: rem(24);
+  left: rem(24);
+  @include mq("md") {
+    font-size: rem(80);
+    line-height: 1.25;
+    width: 47.6%;
+    position: static;
+  }
+}
+
+.page-about__body-left {
+  @include mq("md") {
+    width: 47.6%;
+  }
+}
+
+.page-about__text {
+  color: $text-color;
+  font-family: $base-font-family;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 1.5;
+  margin-top: rem(16);
+  @include mq("md") {
+    margin-top: rem(50);
+    color: $white;
+  }
+}

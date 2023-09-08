@@ -1,0 +1,80 @@
+@use "global" as *;
+
+.gallery__inner {
+  max-width: rem(600);
+}
+
+.gallery__images {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: rem(40);
+  @include mq('md') {
+    grid-template-columns: repeat(11,1fr);
+    grid-auto-flow: dense;
+    margin-top: rem(80);
+  }
+}
+
+
+
+.gallery__img:nth-child(6n+1) img, .gallery__img:nth-child(6n) img {
+  aspect-ratio: 345/523;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery__img:nth-child(6n+2) img, .gallery__img:nth-child(6n+3) img,
+ .gallery__img:nth-child(6n+4) img, .gallery__img:nth-child(6n+5) img {
+  aspect-ratio: 345/219;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery__img:nth-child(6n+1), .gallery__img:nth-child(6n) {
+  @include mq('md') {
+    grid-row: span 2;
+    grid-column: span 5;
+  }
+}
+
+.gallery__img:nth-child(6n+2) , .gallery__img:nth-child(6n+3) ,
+.gallery__img:nth-child(6n+4) , .gallery__img:nth-child(6n+5)  {
+  @include mq('md') {
+    grid-row: span 1;
+    grid-column: span 6;
+  }
+ }
+
+/* =====================================================
+コース画像拡大モーダル （ここから本PEN のコア）
+===================================================== */
+.gallery__modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* コンテンツ全てに対して固定的に 1160pxとか指定されているときの対応で、
+  ダサいが!importantつける */
+  max-width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+.gallery__modal img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  height: 90%;
+  object-fit: contain;
+  z-index: 10000;
+}
