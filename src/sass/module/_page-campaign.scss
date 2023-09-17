@@ -1,7 +1,6 @@
 @use "global" as *;
 
 .page-campaign__inner {
-  max-width: rem(600);
   position: relative;
 }
 
@@ -45,4 +44,8 @@
   @include mq('md') {
   margin-top: 0;
   }
+}
+
+.page-campaign__pagination {
+  margin-top: rem(80);
 }

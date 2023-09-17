@@ -7,10 +7,6 @@
   }
 }
 
-.information__inner {
-  max-width: rem(600);
-}
-
 .information__media {
   margin-top: rem(28);
   @include mq("md") {

@@ -1,0 +1,22 @@
+@use 'global' as *;
+ 
+.page-sitemap__inner {
+  position: relative;
+}
+
+.page-sitemap__inner::after {
+  content: "";
+  display: block;
+  background: url(../images/common/voice-bg_1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  width: rem(120);
+  height: rem(55);
+  top: rem(4);
+  z-index: -1;
+  @include mq('md') {
+    display: none;
+  }
+}

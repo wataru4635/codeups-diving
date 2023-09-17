@@ -1,0 +1,98 @@
+@use "global" as *;
+
+.sidebar-accordion__list {
+  font-size: rem(24);
+  color: $accent-color;
+  font-weight: 400;
+}
+
+.sidebar-accordion__year {
+  padding-left: rem(32);
+  position: relative;
+  cursor: pointer;
+}
+.sidebar-accordion__year{
+  padding-left: rem(32);
+  position: relative;
+}
+
+.sidebar-accordion__year::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 19px 10px 0 10px;
+  border-color: #408f95 transparent transparent transparent;
+  position: absolute;
+  top: rem(10);
+  left: rem(5);
+  transition: all 0.3s;
+}
+
+.sidebar-accordion__year.is-open::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 19px 10px 0 10px;
+  border-color: #408f95 transparent transparent transparent;
+  position: absolute;
+  top: rem(10);
+  left: rem(5);
+  transform: rotate(-90deg);
+  transition: 0.3s;
+}
+
+.sidebar-accordion__item {
+  padding-left: rem(64);
+  position: relative;
+  cursor: pointer;
+}
+
+.sidebar-accordion__item::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 19px;
+  border-color: transparent transparent transparent #408f95;
+  position: absolute;
+  top: rem(10);
+  left: rem(35);
+}
+
+.sidebar-accordion__list:nth-child(n + 2) .sidebar-accordion__items {
+  display: none;
+}
+
+.sidebar-accordion__list:nth-child(n + 2) .sidebar-accordion__year::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 20px;
+  border-color: transparent transparent transparent #408f95;
+  position: absolute;
+  top: rem(10);
+  left: rem(5);
+  transition: 0.3s;
+}
+.sidebar-accordion__list:nth-child(n + 2)
+  .sidebar-accordion__year.is-open::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 20px;
+  border-color: transparent transparent transparent #408f95;
+  position: absolute;
+  top: rem(10);
+  left: rem(5);
+  transition: 0.3s;
+  transform: rotate(90deg);
+}

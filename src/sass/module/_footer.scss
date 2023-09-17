@@ -52,8 +52,12 @@
 
 .footer__nav {
   margin-top: rem(15);
+  max-width: rem(530);
+  margin-left: auto;
   @include mq("md") {
     margin-top: rem(15);
+    margin-left: 0;
+    max-width: 100%;
   }
 }
 

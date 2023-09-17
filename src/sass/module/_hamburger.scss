@@ -19,15 +19,15 @@
   top: 100%;
 }
 
-.hamburger.is-active span:nth-child(1) {
+.hamburger.is-show span:nth-child(1) {
   top: 50%;
   transform: rotate(36.87deg);
 }
-.hamburger.is-active span:nth-child(2) {
+.hamburger.is-show span:nth-child(2) {
   top: 50%;
   opacity: 0;
 }
-.hamburger.is-active span:nth-child(3) {
+.hamburger.is-show span:nth-child(3) {
   top: 50%;
   transform: rotate(-36.87deg);
 }

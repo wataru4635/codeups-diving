@@ -1,0 +1,53 @@
+@use 'global' as *;
+
+
+.page-contact-Thanks__inner {
+  position: relative;
+  @include mq('md') {
+  max-width: rem(750);
+  }
+}
+
+.page-contact-Thanks__inner::after {
+  content: "";
+  display: block;
+  background: url(../images/common/voice-bg_1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  width: rem(120);
+  height: rem(55);
+  top: rem(-25);
+  z-index: -1;
+  @include mq('md') {
+    width: rem(301);
+    height: rem(138);
+    top: rem(-70);
+    left: calc(50% - min(48.5vw, rem(621)));
+  }
+}
+
+.page-contact-Thanks__header {
+  font-size: rem(16);
+  font-weight: 400;
+  line-height: 1.12;
+  color: $text-color;
+  text-align: center;
+}
+
+.page-contact-Thanks__detail {
+  text-align: center;
+  margin-top: rem(40);
+}
+
+.page-contact-Thanks__text {
+  font-size: rem(16);
+  font-weight: 400;
+  color: $text-color;
+}
+
+.u-mobile {
+
+}
+

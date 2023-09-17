@@ -1,0 +1,6 @@
+@use "global" as *;
+
+
+.sidebar-campaign-cards__card +  .sidebar-campaign-cards__card{
+  margin-top: rem(40);
+}

@@ -1,0 +1,32 @@
+@use 'global' as *;
+
+.page-voice__inner {
+  position: relative;
+}
+
+.page-voice__inner::before {
+    content: "";
+    display: block;
+    background: url(../images/common/voice-bg_1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    width: rem(120);
+    height: rem(55);
+    top: rem(-25);
+    @include mq('md') {
+      width: rem(301);
+      height: rem(138);
+      top: rem(-70);
+      left: calc(50% - min(48.5vw, rem(621)));
+    }
+}
+
+.page-voice__items {
+  margin-top: rem(40);
+}
+
+.page-voice__pagination {
+  margin-top: rem(80);
+}

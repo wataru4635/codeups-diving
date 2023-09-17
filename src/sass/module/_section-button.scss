@@ -74,3 +74,35 @@
     background-image: url(../images/common/button-arrow_blue.png);
   }
 }
+
+.section-button--white {
+  color: $accent-color;
+  background-color: $white;
+  padding-left: rem(48);
+}
+
+
+.section-button--white::before {
+  border: rem(1) solid $white;
+}
+
+.section-button--white::after {
+  background: $accent-color;
+  border: rem(1) solid $white;
+}
+
+.section-button--white:hover {
+  @include mq("md") {
+    color: $white;
+  }
+}
+
+.section-button--white span::after {
+  background-image: url(../images/common/button-arrow_blue.png);
+}
+
+.section-button--white:hover span::after {
+  @include mq("md") {
+    background-image: url(../images/common/button-arrow_white.png);
+  }
+}

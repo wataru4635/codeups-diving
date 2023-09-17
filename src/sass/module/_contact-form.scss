@@ -1,0 +1,435 @@
+
+@use "global" as *;
+@use "sass:math";
+// remへの計算式（16pxを基準としている。10pxを基準とする場合は16を10に変更する）
+@function rem($pixels) {
+  @return math.div($pixels, 16) * 1rem;
+}
+/*デフォルト色の指定*/
+$border-cr-default: #408F95; //デフォルト時のボーダーの色
+$border-cr: #408F95; //inputのhover or focus時の色
+$back-cr: #fff;//input（テキスト系）の背景色
+
+/*サイズ等の指定*/
+$fz: rem(16);//入力するときのfont-size
+$padding-und: rem(8);//paddingの指定（上下） inputの内側の余白で使う
+$padding-lnr: rem(16);//paddingの指定（左右） inputの内側の余白で使う
+$border-r: rem(0);//border-radius（テキスト系）
+
+/*ボタン系の指定*/
+$fz-btn: rem(14);//送信ボタンのfont-size
+$font-cr-btn: white;//ボタンのフォントカラー
+$padding-und-btn: rem(20);//paddingの指定（上下） btnの内側の余白で使う
+$padding-lnr-btn: rem(72);//paddingの指定（左右） btnの内側の余白で使う
+$border-r-btn: rem(50);
+
+/*チェックボックスの指定*/
+$check-fz: rem(14);//フォントサイズ
+$check-size: rem(20);//外枠の幅高さ
+$check-bg-cr: #fff;//外枠の背景色
+$check-border-cr: #408F95;//外枠の色
+$check-bg-cr-inner: #C94800;//チェックマークの背景色
+$check-space: rem(8);//チェックマークと文字の距離
+$check-space-betweenRadio: rem(20);//ラジオボタンの間の距離
+$check-weight: 4px;//チェックマークの線の太さ(px)
+
+/*テキストエリアの指定*/
+$textarea-height: rem(200);
+
+[type="text"],
+[type="search"],
+[type="tel"],
+[type="url"],
+[type="email"],
+[type="password"],
+[type="date"],
+textarea {
+	/*↓リセットCSS */
+	border: none;
+	border-radius: 0;
+	background-image: none;
+	font-family: inherit;
+	/*↓カスタム */
+	font-size: $fz;
+	padding: $padding-und $padding-lnr;
+	width: 100%;
+	background: $back-cr;
+	border: 1px solid $border-cr-default;
+	border-radius: $border-r;
+	margin-top: rem(17);
+	@include mq('md') {
+	margin-top: 0;
+	}
+	/*↓↓↓↓不要ならコメントアウト or 削除 */
+	// &:hover {  //ホバーしたときの色
+	// 	border: 1px solid $border-cr;
+	// }
+	/*↓↓選択されているときの色*/
+	&:focus {
+		border: 1px solid $border-cr;
+	}
+	&::placeholder {
+		color: $accent-color;
+		opacity: .2;
+	}
+}
+
+[type="tel"] {
+  width: 100%;
+}
+button,
+[type="button"],
+[type="submit"] {
+	/*↓リセットCSS */
+	margin: 0;
+	background-image: none;
+	width: auto;
+	display: inline-block;
+	text-decoration: none;
+	border: none;
+	border-radius: 0;
+	/*↓カスタム */
+	  padding-top: rem(16);
+  padding-bottom: rem(16);
+  padding-left: rem(40);
+  padding-right: rem(88);
+	font-size: $fz-btn;
+	cursor: pointer;
+  line-height: 1;
+}
+
+[type="checkbox"] {
+	display: none;
+
+	+ span {
+		display: inline-block;
+		position: relative;
+		padding: 0 0 0 calc($check-size + $check-space);
+		font-size: $check-fz;
+		line-height: 1.57;
+		cursor: pointer;
+		transition: 0.3s ease;
+
+		&::before {
+			position: absolute;
+			content: "";
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			background: $check-bg-cr;
+			border: 1px solid $check-border-cr;
+			width: $check-size;
+			height: $check-size;
+			display: block;
+		}
+
+		&::after {
+			opacity: 0;
+			transition: 0.3s ease;
+		}
+	}
+
+	&:checked + span {
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			display: block;
+			opacity: 1;
+			/*チェックマークじゃない場合は以下を変更する*/
+			transform: translateY(-50%) rotate(-45deg);
+			width: calc($check-size * 0.9);
+			height: calc($check-size * 0.5);
+			margin-top: -0.1em;
+			margin-left: 0.1em;
+			border-left: $check-weight solid $check-bg-cr-inner;
+			border-bottom: $check-weight solid $check-bg-cr-inner;
+
+		}
+	}
+}
+
+select {
+	/*↓リセットCSS */
+	border-radius: 0;
+	font-family: inherit;
+	color: inherit;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	/*↓カスタム */
+	font-size: $fz;
+	padding: $padding-und $padding-lnr;
+	background-color: $back-cr;
+  border: 1px solid $border-cr-default;
+  border-radius: $border-r;
+	/*↓デフォルトのアイコンを消す場合はコメントアウト（noneにする）*/
+	// appearance: auto;
+	/*↓デフォルトではないアイコンを使う場合は入力する*/
+	// background-image: url();
+	// background-position: right 12px center;
+	// background-repeat: no-repeat;
+	&:focus {
+		border: 1px solid $border-cr;
+	}
+}
+
+[type="date"] {
+	position: relative;
+	/*↓デフォルトのアイコンを消す場合はコメントアウト（noneにする）*/
+	appearance: auto;
+	/*↓デフォルトではないアイコンを使う場合は入力する*/
+	// background-image: url();
+	// background-position: right 12px center;
+	// background-repeat: no-repeat;
+	&:focus {
+		border-color: 1px solid $border-cr;
+	}
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+	opacity: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+textarea {
+	height: $textarea-height;
+  width: 100%;
+  max-width: rem(600);
+}
+
+////////////////////
+// .contact-form
+////////////////////
+
+.contact-form__item {
+	@include mq('md') {
+		display: grid;
+		grid-template-columns: 31.42% 68.58%;
+	}
+}
+
+
+.contact-form dl {
+	border-bottom:rem(2) dotted $accent-color;
+	padding-bottom: rem(24);
+	@include mq('md') {
+		padding-bottom: rem(40);
+	}
+}
+
+.contact-form__radio {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  @include mq('md') {
+  display: block;
+  gap: 0;
+  }
+}
+
+.contact-form dl:not(:first-child) {
+	margin-top: rem(24);
+	@include mq('md') {
+		margin-top: rem(40);
+	}
+	}
+
+.contact-form__item dt {
+  font-size: rem(16);
+  font-weight: 700;
+	color: $text-color;
+}
+
+.contact-form__item dt span {
+  color: white;
+  font-size: rem(12);
+  margin-left: rem(8);
+	background-color: #C94800;
+	padding: rem(2) rem(8);
+	font-weight: 400;
+	letter-spacing: 0.48em;
+	display: inline-block;
+	text-indent: 0.48em;
+}
+
+.contact-form__select {
+	position: relative;
+	margin-top: rem(17);
+	@include mq('md') {
+	margin-top: 0;
+	}
+}
+
+.contact-form__select::after {
+	content: "";
+	position: absolute;
+	width:0;
+	height:0;
+	border-style:solid;
+	border-width: rem(10) rem(6) 0 rem(6);
+	border-color: #408F95 transparent transparent transparent;
+	top: 50%;
+	transform: translateY(-50%);
+	right: rem(9);
+}
+
+.contact-form__checkbox {
+	display: flex;
+	flex-direction: column;
+	gap: rem(4);
+	margin-top: rem(14);
+	@include mq('md') {
+	margin-top: 0;
+	}
+}
+
+.contact-form__footer {
+	margin-top:rem(40);
+	@include mq('md') {
+		margin-top: rem(80);
+		text-align: center;
+	}
+}
+
+.contact-form__privacy {
+	max-width: 85%;
+	margin-left: auto;
+	margin-right: auto;
+	color: $text-color;
+}
+
+.contact-form__privacy label [type=checkbox] + span {
+	@include mq('md') {
+		padding-left: rem(32);
+	}
+}
+
+.contact-form__privacy label [type=checkbox] + span::after,
+.contact-form__privacy label [type=checkbox] + span::before {
+	top: 28%;
+	@include mq('md') {
+	top: 50%;
+	}
+}
+
+.contact-form__footer-button {
+	text-align: center;
+	margin-top: rem(24);
+	@include mq('md') {
+	margin-top: rem(40);
+	}
+}
+
+.contact-form__button {
+	position: relative;
+}
+
+.contact-form__button {
+  display: inline-block;
+  color: $white;
+  line-height: 1.57;
+  font-size: rem(14);
+  font-family: $english-font-family;
+  font-weight: $regular;
+  background-color: $accent-color;
+  position: relative;
+  left: rem(-3);
+  z-index: 1;
+}
+
+.contact-form__button::before {
+  content: "";
+  position: absolute;
+  border: rem(1) solid $accent-color;
+  width: rem(202);
+  height: rem(54);
+  top: rem(4);
+  left: rem(4);
+  z-index: -1;
+	pointer-events: none;
+}
+.contact-form__button::after {
+  background: $white;
+  position: absolute;
+  top: 0;
+  border: rem(1) solid $accent-color;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+  z-index: -1;
+}
+
+.contact-form__button-submit {
+	padding-top: rem(20);
+  padding-bottom: rem(20);
+  padding-left: rem(56);
+  padding-right: rem(112);
+	text-transform: capitalize;
+	transition: color 0.3s;
+	color: white;
+}
+
+.contact-form__button-submit:hover {
+  @include mq("md") {
+    color: $accent-color;
+  }
+}
+.contact-form__button:hover::after {
+  @include mq("md") {
+    transform: scale(1, 1);
+  }
+}
+
+.contact-form__button span {
+  position: relative;
+}
+
+.contact-form__button span::after {
+  content: "";
+  position: absolute;
+  width: rem(40);
+  height: 100%;
+  background-image: url(../images/common/button-arrow_white.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: rem(6);
+	right: rem(55);
+	pointer-events: none;
+}
+
+.contact-form__button:hover span::after {
+  @include mq("md") {
+    background-image: url(../images/common/button-arrow_blue.png);
+  }
+}
+
+.contact-form_error {
+	text-align: center;
+	margin-bottom: rem(40);
+	display: block;
+}
+
+.contact-form_error-text {
+  color: #C94800;
+	display: inline-block;
+	text-align-last: left;
+}
+
+.js-invalid {
+	border: rem(1) solid #C94800;
+	background: rgba(201, 72, 0, 0.20);
+}
+
+.valid {
+	background: $back-cr;
+	border: rem(1) solid $border-cr-default;
+}

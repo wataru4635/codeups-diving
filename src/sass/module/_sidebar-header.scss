@@ -1,0 +1,28 @@
+@use "global" as *;
+
+
+.sidebar-header__title {
+  font-size: rem(24);
+  font-weight: 400;
+  padding-left: rem(74);
+  padding-top: rem(4);
+  padding-bottom: rem(4);
+  border-left: rem(8) solid $accent-color;
+  position: relative;
+  color: $text-color;
+}
+
+.sidebar-header__title::before{
+ content: '';
+ display: block;
+ background: url(../images/common/sidebar-icon.png);
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: contain;
+ position: absolute;
+ width: rem(50);
+ height: rem(50);
+ top: 50%;
+ left: rem(14);
+ transform: translateY(-50%);
+}

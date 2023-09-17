@@ -74,3 +74,24 @@
     gap: rem(40);
   }
 }
+
+.nav__menu--sitemap {
+  color: $text-color;
+}
+
+.nav__submenu--sitemap {
+  color: $text-color;
+}
+
+
+.nav__menu--sitemap::before {
+  background: url(../images/common/sitemap-starfish.png);
+  background-position: center;
+  background-size: contain;
+  content: "";
+  position: absolute;
+  width: rem(18);
+  height: rem(18);
+  top: rem(12);
+  left: 0;
+}

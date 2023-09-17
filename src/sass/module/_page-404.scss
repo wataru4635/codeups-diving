@@ -1,0 +1,73 @@
+@use 'global' as *;
+
+.page-404 {
+  height: rem(345);
+  background-color: $accent-color;
+  position: relative;
+  @include mq('md') {
+  height: rem(785);
+  }
+}
+
+.page-404__inner {
+  position: relative;
+}
+
+
+.page-404__inner::before {
+  content: "";
+  background-image: url(../images/common/page-404_bg.png);
+  height: rem(345);
+  width: rem(345);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  top: rem(-6);
+  left: rem(16);
+  @include mq('md') {
+  width: rem(698);
+  height: rem(698);
+  top: rem(-25);
+  left: rem(31);
+  }
+}
+
+.page-404__block {
+  text-align: center;
+  margin-top: rem(60);
+  position: relative;
+  @include mq('md') {
+  margin-top: rem(120);
+  }
+}
+
+.page-404__title {
+  font-family: $lato-font-family;
+  font-size: rem(80);
+  letter-spacing: 0.5em;
+  color: #fff;
+  font-weight: 400;
+  text-indent: 0.5em;
+  line-height: 1;
+  @include mq('md') {
+  font-size: rem(160);
+  }
+}
+
+.page-404__text {
+  color: #fff;
+  font-weight: 400;
+  font-size: rem(16);
+  font-family: $lato-font-family;
+  @include mq('md') {
+  margin-top: rem(24);
+  }
+}
+
+.page-404__button {
+  margin-top: rem(40);
+  @include mq('md') {
+  margin-top: rem(80);
+  }
+}

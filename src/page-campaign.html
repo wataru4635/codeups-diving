@@ -38,17 +38,16 @@
 </head>
 
 <body>
-
   <!-- header -->
 
   <header class="header top-header">
     <div class="header__inner">
-      <h1 class="header__logo">
-        <a href="index.html" class="header__logoLink">
+      <div class="header__logo">
+        <a href="#" class="header__logoLink">
           <img src="./assets/images/common/logo.svg" alt="ロゴ画像">
         </a>
-      </h1>
-      <div class="header__drawer hamburger-layout js-hamburger">
+      </div>
+      <div class="header__drawer hamburger js-hamburger">
         <span></span>
         <span></span>
         <span></span>
@@ -56,7 +55,7 @@
       <nav class="header__pc-nav pc-nav">
         <ul class="pc-nav__items">
           <li class="pc-nav__item">
-            <a href="#">
+            <a href="page-campaign.html">
               <div class="pc-nav__title">
                 <p class="pc-nav__en-title">Campaign</p>
                 <p class="pc-nav__jp-title">キャンペーン</p>
@@ -72,7 +71,7 @@
             </a>
           </li>
           <li class="pc-nav__item">
-            <a href="#">
+            <a href="page-information.html">
               <div class="pc-nav__title">
                 <p class="pc-nav__en-title">Information</p>
                 <p class="pc-nav__jp-title">ダイビング情報</p>
@@ -80,7 +79,7 @@
             </a>
           </li>
           <li class="pc-nav__item">
-            <a href="#">
+            <a href="page-blog.html">
               <div class="pc-nav__title">
                 <p class="pc-nav__en-title">Blog</p>
                 <p class="pc-nav__jp-title">ブログ</p>
@@ -122,11 +121,11 @@
         </ul>
       </nav>
       <nav class="header__sp-nav nav js-sp-nav">
-        <div class="header__sp-container nav__container">
-          <div class="nav__list nav__list--left">
+        <div class="nav__container">
+          <div class="nav__list">
             <ul class="nav__items">
               <li class="nav__item">
-                <a class="nav__menu nav__menu--margin-top" href="#">キャンペーン</a>
+                <a class="nav__menu" href="#">キャンペーン</a>
               </li>
               <li class="nav__item">
                 <a class="nav__submenu" href="#">ライセンス取得</a>
@@ -159,10 +158,10 @@
               </li>
             </ul>
           </div>
-          <div class="nav__list nav__list--right">
+          <div class="nav__list">
             <ul class="nav__items">
               <li class="nav__item">
-                <a class="nav__menu nav__menu--margin-top" href="#">お客様の声</a>
+                <a class="nav__menu" href="#">お客様の声</a>
               </li>
               <li class="nav__item">
                 <a class="nav__menu" href="#">料金一覧</a>
@@ -201,7 +200,7 @@
 
   <section class=" sub-mv">
     <div class="sub-mv__header ">
-      <h2 class="sub-mv__title">campaign</h2>
+      <h1 class="sub-mv__title">campaign</h1>
     </div>
     <div class="sub-mv__img">
       <picture>
@@ -357,7 +356,7 @@
 
   <!-- ページネーション -->
 
-      <div class="page-campaign__pagination pagination pagination-layout">
+      <div class="page-campaign__pagination pagination">
         <a href="#" class="pagination__prev"></a>
         <a href="#" class="pagination__pager current">1</a>
         <a href="#" class="pagination__pager">2</a>

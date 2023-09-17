@@ -1,0 +1,60 @@
+@use 'global' as *;
+
+.page-privacypolicy__inner {
+  position: relative;
+  @include mq('md') {
+  max-width: rem(850);
+  }
+}
+
+.page-privacypolicy__inner::before {
+  content: "";
+  display: block;
+  background: url(../images/common/voice-bg_1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  width: rem(120);
+  height: rem(55);
+  top: rem(-25);
+  @include mq('md') {
+    width: rem(301);
+    height: rem(138);
+    top: rem(-70);
+    left: calc(50% - min(48.5vw, rem(621)));
+  }
+}
+
+.page-privacypolicy__title {
+  font-size: rem(24);
+  font-weight: 500;
+  color: $text-color;
+  @include mq('md') {
+  font-size: rem(32);
+  }
+}
+
+.page-privacypolicy__summary {
+  margin-top: rem(40);
+  font-size: rem(16);
+  line-height: 2;
+}
+
+.page-privacypolicy__container {
+  line-height: 2;
+  color: $text-color;
+}
+
+.page-privacypolicy__items {
+  margin-top: rem(36);
+}
+
+.page-privacypolicy__text {
+  text-indent: -1em;
+  padding-left: 1em;
+}
+
+.page-privacypolicy__footer-text {
+  margin-top: rem(36);
+}

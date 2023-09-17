@@ -1,0 +1,26 @@
+@use "global" as *;
+
+.sidebar-voice-item__img img{
+  width: 100%;
+  aspect-ratio: 294/218;
+  object-fit: cover;
+}
+
+.sidebar-voice-item__body {
+  margin-top: rem(16);
+}
+
+.sidebar-voice-item__meta {
+  font-size: rem(12);
+  font-weight: 400;
+  line-height: 1.5;
+  color: $text-color;
+}
+
+.sidebar-voice-item__title {
+  font-size: rem(24);
+  font-weight: 500;
+  color: $text-color;
+  margin-top: rem(8);
+}
+

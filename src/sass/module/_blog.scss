@@ -8,7 +8,6 @@
 }
 
 .blog__inner {
-  max-width: rem(600);
   @include mq("md") {
     position: relative;
   }

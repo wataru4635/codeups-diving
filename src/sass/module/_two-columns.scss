@@ -1,0 +1,16 @@
+@use 'global' as *;
+
+.two-columns {
+  @include mq('md') {
+    display: grid;
+    gap: rem(80);
+    grid-template-columns: 2.35fr 1fr;
+    }
+}
+
+.two-columns__side {
+  margin-top: rem(80);
+  @include mq('md') {
+  margin-top: rem(0);
+  }
+}

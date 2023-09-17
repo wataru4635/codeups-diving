@@ -1,7 +1,6 @@
 @use "global" as *;
 .page-about__inner {
   position: relative;
-  max-width: rem(600);
 }
 
 .page-about__inner::before {

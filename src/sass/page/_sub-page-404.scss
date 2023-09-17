@@ -1,0 +1,8 @@
+@use 'global' as *;
+
+.sub-page-404 {
+  padding-top: rem(83);
+  @include mq('md') {
+  padding-top: rem(93);
+  }
+}

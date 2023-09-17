@@ -1,0 +1,56 @@
+@use 'global' as *;
+
+.accordion-item__question {
+  color: $white;
+  background: $accent-color;
+  font-size: rem(16);
+  font-weight: 400;
+  padding-left: rem(16);
+  padding-top: rem(16);
+  padding-bottom: rem(16);
+  padding-right: rem(75);
+  position: relative;
+  cursor: pointer;
+  @include mq('md') {
+  font-size: rem(20);
+  }
+}
+
+.accordion-item__question::before,
+.accordion-item__question::after {
+  content: "";
+  position: absolute;
+  width: rem(28);
+  height: rem(1);
+  background-color: white;
+  top: 50%;
+  transform: translateY(-50%);
+  right: rem(28);
+  transition: transform .3s;
+  @include mq('md') {
+    width: rem(32);
+    right: rem(40);
+  }
+}
+
+.accordion-item__question.js-faq-open::after{
+  transform: rotate(90deg);
+}
+
+.accordion-item__answer {
+  border: rem(1) solid $accent-color;
+  border-top: none;
+  padding: rem(24) rem(16);
+  @include mq('md') {
+  border-top: rem(1) solid $accent-color;
+  padding: rem(40);
+  margin-top: rem(16);
+  }
+}
+
+.accordion-item__answer-text {
+  font-size: rem(16);
+  font-weight: 400;
+  color: $text-color;
+}
+

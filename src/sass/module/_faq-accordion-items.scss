@@ -1,0 +1,5 @@
+@use 'global' as *;
+
+.faq-accordion-items__item + .faq-accordion-items__item {
+  margin-top: rem(40);
+}

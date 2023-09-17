@@ -31,8 +31,8 @@
   }
 }
 
-.sub-mv__title::first-letter {
-  text-transform: uppercase;
+.sub-mv__title {
+  text-transform: capitalize;
 }
 
 .sub-mv__img {
@@ -44,4 +44,16 @@
   filter: none;
   height: 100%;
   object-fit: cover;
+}
+
+.sub-mv__title--uppercase {
+  text-transform: uppercase;
+}
+
+.sub-mv__title--sitemap {
+  text-transform: uppercase;
+}
+
+.sub-mv__title--lowercase {
+  text-transform: lowercase;
 }

@@ -1,0 +1,29 @@
+@use "global" as *;
+
+.sideContent__inner {
+  padding: 0 rem(25);
+  @include mq('md') {
+  padding: 0;
+  }
+}
+
+.sideContent__wrapper + .sideContent__wrapper{
+  margin-top: rem(80);
+}
+
+.sideContent__item {
+  margin-top: rem(24);
+}
+
+.sideContent__button {
+  text-align: center;
+  margin-top: rem(40);
+}
+
+.sideContent__campaign-cards {
+  margin-top: rem(24);
+}
+
+.sideContent__accordion {
+  margin-top: rem(24);
+}
