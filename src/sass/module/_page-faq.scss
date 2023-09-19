@@ -1,6 +1,6 @@
 @use 'global' as *;
 
-.page-faq__inner {
+.page-faq__inner.inner {
   position: relative;
   @include mq('md') {
   max-width: rem(750);

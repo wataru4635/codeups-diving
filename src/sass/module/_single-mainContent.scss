@@ -30,7 +30,17 @@
   object-fit: cover;
 }
 
-.single-mainContent__body {
+.single-mainContent__block {
+
+  img {
+    margin-top: rem(24);
+    width: 100%;
+    aspect-ratio: 700/468;
+    object-fit: cover;
+    @include mq('md') {
+    margin-top: rem(40);
+    }
+  }
 
   p {
     line-height: 1.5;

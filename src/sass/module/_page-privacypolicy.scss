@@ -1,6 +1,6 @@
 @use 'global' as *;
 
-.page-privacypolicy__inner {
+.page-privacypolicy__inner.inner {
   position: relative;
   @include mq('md') {
   max-width: rem(850);

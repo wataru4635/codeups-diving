@@ -4,124 +4,133 @@ jQuery(function ($) {
   // ==========================================================================
   // ローディングアニメーション
   // ==========================================================================
+function disableVerticalScrollForSeconds(seconds) {
+  disableVerticalScroll();
+  setTimeout(enableVerticalScroll, seconds * 1000);
+}
 
-  function hideAnimation() {
-    loadingAnimation.style.display = "block";
-  }
-  let loadingAnimation = document.querySelector(".js-mv-swiper");
-  let leftImage = document.querySelector(".loading-mv__img-left img");
-  let rightImage = document.querySelector(".loading-mv__img-right img");
-  let loadingHeader = document.querySelector(".loading-mv__header");
-  let mainHeader = document.querySelector(".mv__header");
-  let header = document.querySelector(".js-header");
-  let gsapAnimationDuration = 1 * 1000; // GSAPアニメーションの時間（ミリ秒単位）
-  let swiperDelay = 3000; // Swiperの初回発火までの時間（ミリ秒単位）
-  let sessionKey = "animationSession";
+function hideAnimation() {
+  loadingAnimation.style.display = "block";
+}
 
-  // 初回アクセス時にフラグをセッションストレージに設定
-  if (!sessionStorage.getItem("animationPlayed")) {
-    gsap.fromTo(
-      rightImage, {
-        opacity: 0,
-        y: "100%"
-      }, {
-        opacity: 1,
-        y: "0%",
-        duration: 3,
-        delay: 3.2,
-        ease: "power2.out"
-      }
-    );
-    gsap.fromTo(
-      leftImage, {
-        opacity: 0,
-        y: "100%"
-      }, {
-        opacity: 1,
-        y: "0%",
-        duration: 3,
-        delay: 3,
-        ease: "power2.out"
-      }
-    );
-    gsap.fromTo(
-      loadingAnimation, {
-        opacity: 0
-      }, // 初期値
-      {
-        opacity: 1,
-        duration: 2,
-        delay: 6,
-        ease: "none",
-        onComplete: hideAnimation,
-      }
-    );
+function disableVerticalScroll() {
+  document.body.style.overflowY = "hidden";
+}
 
-    // mainHeaderのGSAPアニメーション
-    gsap.fromTo(
-      mainHeader, {
-        opacity: 0
-      }, {
-        opacity: 1,
-        duration: 2,
-        ease: "power1.out",
-        delay: 6, // 調整してloadingHeaderがフェードアウトした後に表示されるように遅延させる
-      }
-    );
-    gsap.fromTo(
-      header, // 複数の要素を同時にアニメーションさせるため、配列で指定します
-      {
-        opacity: 0,
-        y: -50
-      }, // y軸方向に-50px移動して非表示にします
-      {
-        opacity: 1,
-        y: 0, // y軸方向に0pxまで移動して表示します
-        duration: 2,
-        ease: "power1.out",
-        delay: 5, // 調整してloadingHeaderがフェードアウトした後に表示されるように遅延させる
-      }
-    );
-    gsap.fromTo(
-      loadingHeader, {
-        opacity: 1
-      }, {
-        opacity: 0,
-        duration: 2,
-        ease: "power1.out",
-        delay: 1, // 調整して1秒間表示させてからフェードアウトするように遅延させる
-      }
-    );
+function enableVerticalScroll() {
+  document.body.style.overflowY = "auto";
+}
 
-    if (!sessionStorage.getItem(sessionKey)) {
-      loadingHeader.style.display = "block"; // 初回アクセス時のみ表示
+let loadingAnimation = document.querySelector(".js-mv-swiper");
+let leftImage = document.querySelector(".loading-mv__img-left img");
+let rightImage = document.querySelector(".loading-mv__img-right img");
+let loadingHeader = document.querySelector(".loading-mv__header");
+let mainHeader = document.querySelector(".mv__header");
+let header = document.querySelector(".js-header");
+let gsapAnimationDuration = 1000; // GSAPアニメーションの時間（ミリ秒単位）
+let swiperDelay = 3000; // Swiperの初回発火までの時間（ミリ秒単位）
+let sessionKey = "animationSession";
 
-      // 以下、アニメーションコードの記述
+// 初回アクセス時にフラグをセッションストレージに設定
+if (!sessionStorage.getItem("animationPlayed")) {
+  disableVerticalScrollForSeconds(7);
 
-      sessionStorage.setItem(sessionKey, true); // 初回アクセスフラグをセット
-    } else {
-      loadingHeader.style.display = "none"; // 初回アクセス後は非表示
+  gsap.fromTo(
+    rightImage,
+    { opacity: 0, y: "100%" },
+    {
+      opacity: 1,
+      y: "0%",
+      duration: 3,
+      delay: 3.2,
+      ease: "power2.out"
     }
+  );
 
-    sessionStorage.setItem("animationPlayed", true);
+  gsap.fromTo(
+    leftImage,
+    { opacity: 0, y: "100%" },
+    {
+      opacity: 1,
+      y: "0%",
+      duration: 3,
+      delay: 3,
+      ease: "power2.out"
+    }
+  );
+
+  gsap.fromTo(
+    loadingAnimation,
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration: 2,
+      delay: 6,
+      ease: "none",
+      onComplete: hideAnimation,
+    }
+  );
+
+  gsap.fromTo(
+    mainHeader,
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration: 2,
+      ease: "power1.out",
+      delay: 6,
+    }
+  );
+
+  gsap.fromTo(
+    header,
+    { opacity: 0, y: -50 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 2,
+      ease: "power1.out",
+      delay: 5,
+    }
+  );
+
+  gsap.fromTo(
+    loadingHeader,
+    { opacity: 1 },
+    {
+      opacity: 0,
+      duration: 2,
+      ease: "power1.out",
+      delay: 1,
+    }
+  );
+
+  if (!sessionStorage.getItem(sessionKey)) {
+    loadingHeader.style.display = "block";
+    sessionStorage.setItem(sessionKey, true);
   } else {
-    // 初回アクセス後は要素を非表示にする
-    let loadingHeaders = document.querySelectorAll(".loading-mv__header"); // 複数の要素が該当する場合に対応
-    loadingHeaders.forEach((loadingHeader) => {
-      loadingHeader.style.display = "none";
-    });
+    loadingHeader.style.display = "none";
   }
 
-  setTimeout(function () {
-    let swiper = new Swiper(".js-mv-swiper", {
-      loop: true,
-      effect: "fade", // 画像をフェードで切り替える
-      autoplay: {
-        delay: 3000, // 単位 : ms 1000ms = 1s
-      },
-      speed: 2000, // 2秒かけてフェード
-    });
-  }, gsapAnimationDuration + swiperDelay);
+  sessionStorage.setItem("animationPlayed", true);
+} else {
+  let loadingHeaders = document.querySelectorAll(".loading-mv__header");
+  loadingHeaders.forEach((loadingHeader) => {
+    loadingHeader.style.display = "none";
+  });
+}
+
+setTimeout(function () {
+  let swiper = new Swiper(".js-mv-swiper", {
+    loop: true,
+    effect: "fade",
+    autoplay: {
+      delay: 3000,
+    },
+    speed: 2000,
+  });
+}, gsapAnimationDuration + swiperDelay);
+
   // ==========================================================================
   //  ハンバーガメニュー
   // ==========================================================================
@@ -370,8 +379,6 @@ window.addEventListener('DOMContentLoaded', function () {
     return siblings;
   };
 
-
-
   const footerTabList = document.querySelectorAll('.js-tab-list');
 
   footerTabList.forEach((element, i) => {
@@ -402,7 +409,26 @@ window.addEventListener('DOMContentLoaded', function () {
 
     })
   })
-})
+
+  // URLからクエリパラメータを取得
+  const params = new URLSearchParams(window.location.search);
+  const targetTab = params.get('tab');
+
+  // クエリパラメータが存在する場合は、該当のタブを表示する
+  if (targetTab) {
+    // クリックイベントを作成して実行
+    const event = new Event('click', {
+      bubbles: true
+    });
+    const targetElement = document.querySelector(`[data-tab="${targetTab}"]`);
+    if (targetElement) {
+      targetElement.dispatchEvent(event);
+    }
+  }
+
+});
+
+
 
 //アコーディオンをクリックした時の動作
 $('.js-faq-question').on('click', function () { //タイトル要素をクリックしたら

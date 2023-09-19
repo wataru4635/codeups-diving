@@ -15,21 +15,28 @@
 .information-tab__list {
   text-align: center;
   background: var(--green2, #DDF0F1);
-  padding: rem(8) rem(15);
+  padding: rem(8) 0;
   font-weight: 400;
   font-size: rem(14);
   color: $accent-color;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
   position: relative;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
   @include mq('md') {
     text-align: right;
     font-size: rem(24);
     max-width: rem(300);
-    padding: rem(27) rem(18);
+    padding: rem(27) 0;
   }
 }
 
+.information-tab__list span {
+  @include mq('md') {
+    padding-left: rem(72);
+  }
+}
 
 .information-tab__list:nth-child(1):before {
   @include mq('md') {
