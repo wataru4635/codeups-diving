@@ -1,5 +1,6 @@
 @use 'global' as *;
 
-.faq-accordion-items__item + .faq-accordion-items__item {
-  margin-top: rem(40);
+.faq-accordion-items {
+  display: grid;
+  gap: rem(40);
 }

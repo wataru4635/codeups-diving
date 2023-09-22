@@ -12,7 +12,9 @@
   }
 }
 
-
+.gallery__img {
+  cursor: pointer;
+}
 
 .gallery__img:nth-child(6n+1) img, .gallery__img:nth-child(6n) img {
   aspect-ratio: 345/523;

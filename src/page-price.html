@@ -34,6 +34,7 @@
   <script defer src="https://code.jquery.com/jquery-1.9.1.min.js"
     integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script defer src="./assets/js/jquery.inview.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
@@ -151,12 +152,12 @@
                 <a class="nav__submenu js-tab-list" data-tab="license" href="page-information.html">ライセンス講習</a>
               </li>
               <li class="nav__item">
-                <a class="nav__submenu js-tab-list" data-tab="experienceDiving"
-                  href="page-information.html?tab=experienceDiving">体験ダイビング</a>
-              </li>
-              <li class="nav__item">
                 <a class="nav__submenu js-tab-list" data-tab="fanDiving"
                   href="page-information.html?tab=fanDiving">ファンダイビング</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__submenu js-tab-list" data-tab="experienceDiving"
+                  href="page-information.html?tab=experienceDiving">体験ダイビング</a>
               </li>
               <li class="nav__item">
                 <a class="nav__menu" href="page-blog.html">ブログ</a>
@@ -172,13 +173,13 @@
                 <a class="nav__menu" href="page-price.html">料金一覧</a>
               </li>
               <li class="nav__item">
-                <a class="nav__submenu" href="page-price.html">ライセンス講習</a>
+                <a class="nav__submenu" href="page-price.html#price-license">ライセンス講習</a>
               </li>
               <li class="nav__item">
-                <a class="nav__submenu" href="page-price.html">体験ダイビング</a>
+                <a class="nav__submenu" href="page-price.html#price-experienceDiving">体験ダイビング</a>
               </li>
               <li class="nav__item">
-                <a class="nav__submenu" href="page-price.html">ファンダイビング</a>
+                <a class="nav__submenu" href="page-price.html#price-fandiving">ファンダイビング</a>
               </li>
             </ul>
             <ul class="nav__items">
@@ -238,7 +239,7 @@
     <section class="page-price sub-page-price">
       <div class="page-price__inner inner">
         <div class="page-price__container">
-          <div class="page-price__table price-table">
+          <div class="page-price__table price-table" id="price-license">
             <div class="price-table__header">
               <div class="price-table__header-img">
                 <img src="./assets/images/common/information-tab_1-active.png" alt="ロゴ画像" />
@@ -258,7 +259,7 @@
               <dd class="price-table__price">¥70,000</dd>
             </dl>
           </div>
-          <div class="page-price__table price-table">
+          <div class="page-price__table price-table " id="price-experienceDiving">
             <div class="price-table__header">
               <div class="price-table__header-img">
                 <img src="./assets/images/common/information-tab_1-active.png" alt="ロゴ画像" />
@@ -284,7 +285,7 @@
               <dd class="price-table__price">¥18,000</dd>
             </dl>
           </div>
-          <div class="page-price__table price-table">
+          <div class="page-price__table price-table" id="price-fandiving">
             <div class="price-table__header">
               <div class="price-table__header-img">
                 <img src="./assets/images/common/information-tab_1-active.png" alt="ロゴ画像" />
@@ -310,7 +311,7 @@
               <dd class="price-table__price">¥10,000</dd>
             </dl>
           </div>
-          <div class="page-price__table price-table">
+          <div class="page-price__table price-table" id="price-specialDiving">
             <div class="price-table__header">
               <div class="price-table__header-img">
                 <img src="./assets/images/common/information-tab_1-active.png" alt="ロゴ画像" />
@@ -430,12 +431,12 @@
                 <a class="nav__submenu js-tab-list" data-tab="license" href="page-information.html">ライセンス講習</a>
               </li>
               <li class="nav__item">
-                <a class="nav__submenu js-tab-list" data-tab="experienceDiving"
-                  href="page-information.html?tab=experienceDiving">体験ダイビング</a>
-              </li>
-              <li class="nav__item">
                 <a class="nav__submenu js-tab-list" data-tab="fanDiving"
                   href="page-information.html?tab=fanDiving">ファンダイビング</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__submenu js-tab-list" data-tab="experienceDiving"
+                  href="page-information.html?tab=experienceDiving">体験ダイビング</a>
               </li>
               <li class="nav__item">
                 <a class="nav__menu" href="page-blog.html">ブログ</a>
@@ -451,13 +452,16 @@
                 <a class="nav__menu" href="page-price.html">料金一覧</a>
               </li>
               <li class="nav__item">
-                <a class="nav__submenu" href="page-price.html">ライセンス講習</a>
+                <a class="nav__submenu" href="page-price.html#price-license">ライセンス講習</a>
               </li>
               <li class="nav__item">
-                <a class="nav__submenu" href="page-price.html">体験ダイビング</a>
+                <a class="nav__submenu" href="page-price.html#price-experienceDiving">体験ダイビング</a>
               </li>
               <li class="nav__item">
-                <a class="nav__submenu" href="page-price.html">ファンダイビング</a>
+                <a class="nav__submenu" href="page-price.html#price-fandiving">ファンダイビング</a>
+              </li>
+              <li class="nav__item u-desktop">
+                <a class="nav__submenu" href="page-price.html#price-specialDiving">スペシャルダイビング</a>
               </li>
             </ul>
             <ul class="nav__items">

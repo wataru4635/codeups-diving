@@ -4,22 +4,20 @@ jQuery(function ($) {
   // ==========================================================================
   // ローディングアニメーション
   // ==========================================================================
-function disableVerticalScrollForSeconds(seconds) {
-  disableVerticalScroll();
-  setTimeout(enableVerticalScroll, seconds * 1000);
-}
-
 function hideAnimation() {
   loadingAnimation.style.display = "block";
 }
 
-function disableVerticalScroll() {
-  document.body.style.overflowY = "hidden";
-}
+  // アニメーション中のスクロール禁止用の関数
+  function disableScroll() {
+    $('body').css('overflow', 'hidden');
+  }
 
-function enableVerticalScroll() {
-  document.body.style.overflowY = "auto";
-}
+  // アニメーションが終了した後にスクロールを有効にする関数
+  function enableScroll() {
+    $('body').css('overflow', 'auto');
+  }
+
 
 let loadingAnimation = document.querySelector(".js-mv-swiper");
 let leftImage = document.querySelector(".loading-mv__img-left img");
@@ -31,9 +29,12 @@ let gsapAnimationDuration = 1000; // GSAPアニメーションの時間（ミリ
 let swiperDelay = 3000; // Swiperの初回発火までの時間（ミリ秒単位）
 let sessionKey = "animationSession";
 
+// Cookieからアクセス時刻を取得
+let lastAccessTime = Cookies.get("lastAccessTime");
+
 // 初回アクセス時にフラグをセッションストレージに設定
-if (!sessionStorage.getItem("animationPlayed")) {
-  disableVerticalScrollForSeconds(7);
+if (!sessionStorage.getItem("animationPlayed") && (!lastAccessTime || (Date.now() - Number(lastAccessTime) >= 43200000))) {
+  disableScroll();
 
   gsap.fromTo(
     rightImage,
@@ -41,8 +42,8 @@ if (!sessionStorage.getItem("animationPlayed")) {
     {
       opacity: 1,
       y: "0%",
-      duration: 3,
-      delay: 3.2,
+      duration: 2,
+      delay: 2.2,
       ease: "power2.out"
     }
   );
@@ -53,8 +54,8 @@ if (!sessionStorage.getItem("animationPlayed")) {
     {
       opacity: 1,
       y: "0%",
-      duration: 3,
-      delay: 3,
+      duration: 2,
+      delay: 2,
       ease: "power2.out"
     }
   );
@@ -65,7 +66,7 @@ if (!sessionStorage.getItem("animationPlayed")) {
     {
       opacity: 1,
       duration: 2,
-      delay: 6,
+      delay: 4,
       ease: "none",
       onComplete: hideAnimation,
     }
@@ -78,7 +79,7 @@ if (!sessionStorage.getItem("animationPlayed")) {
       opacity: 1,
       duration: 2,
       ease: "power1.out",
-      delay: 6,
+      delay: 4,
     }
   );
 
@@ -88,9 +89,9 @@ if (!sessionStorage.getItem("animationPlayed")) {
     {
       opacity: 1,
       y: 0,
-      duration: 2,
+      duration: 1,
       ease: "power1.out",
-      delay: 5,
+      delay: 4,
     }
   );
 
@@ -99,9 +100,9 @@ if (!sessionStorage.getItem("animationPlayed")) {
     { opacity: 1 },
     {
       opacity: 0,
-      duration: 2,
+      duration: .5,
       ease: "power1.out",
-      delay: 1,
+      delay: .5,
     }
   );
 
@@ -113,6 +114,8 @@ if (!sessionStorage.getItem("animationPlayed")) {
   }
 
   sessionStorage.setItem("animationPlayed", true);
+  Cookies.set("lastAccessTime", Date.now()); // 現在のアクセス時刻をCookieに保存
+
 } else {
   let loadingHeaders = document.querySelectorAll(".loading-mv__header");
   loadingHeaders.forEach((loadingHeader) => {
@@ -120,16 +123,19 @@ if (!sessionStorage.getItem("animationPlayed")) {
   });
 }
 
-setTimeout(function () {
-  let swiper = new Swiper(".js-mv-swiper", {
-    loop: true,
-    effect: "fade",
-    autoplay: {
-      delay: 3000,
-    },
-    speed: 2000,
-  });
-}, gsapAnimationDuration + swiperDelay);
+  // アニメーションが終了したらスクロールを有効にする
+  setTimeout(function () {
+    enableScroll();
+
+    let swiper = new Swiper(".js-mv-swiper", {
+      loop: true,
+      effect: "fade",
+      autoplay: {
+        delay: 3000,
+      },
+      speed: 2000,
+    });
+  }, gsapAnimationDuration + swiperDelay);
 
   // ==========================================================================
   //  ハンバーガメニュー
